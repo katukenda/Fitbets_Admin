@@ -7,8 +7,8 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-
+class RegisterViewController: UIViewController, UIAlertViewDelegate {
+    
     
     @IBOutlet weak var adminName: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     //register
     
     @IBAction func registerButton(_ sender: Any) {
@@ -70,7 +70,50 @@ class RegisterViewController: UIViewController {
         guard let password_input = password.text else { return }
         
         let register = RegisterModel(admin_name: admin_name, email_address: e_mail, mobile_number: mobile_number, password: password_input, device_token: device_token)
-            APIManager.shareInstance.callRegisterAPI(register: register)
+        APIManager.shareInstance.callRegisterAPI(register: register)
+        {
+            (isSuccess) in
+            if isSuccess {
+                let alertController = UIAlertController(title: "Register Alert!", message: "Admin registerd succesfully", preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Add another", style: .cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "Login", style: .default) { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true) {
+                    // ...
+                }
+            }
+            else {
+                let alertController = UIAlertController(title: "Register Alert!", message: "Bad Request", preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Try Again", style: .cancel) { (action) in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "Login", style: .default) { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true) {
+                    // ...
+                }
+            }
+        }
     }
-
+    
+    
+    @IBAction func backToLogin(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+           dismiss(animated: true, completion: nil)
+    }
+    
 }

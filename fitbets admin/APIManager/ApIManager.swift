@@ -11,7 +11,7 @@ import Alamofire
 class APIManager{
     static let shareInstance = APIManager()
     
-    func callRegisterAPI(register: RegisterModel){
+    func callRegisterAPI(register: RegisterModel, completionHandler: @escaping (Bool) -> ()){
         let headers: HTTPHeaders = [
             .contentType("application/json")
         ]
@@ -21,14 +21,22 @@ class APIManager{
             case.success(let data):
                 do{
                     let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                    print(json)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(true)
+                    }
+                    else {
+                        completionHandler(false)
+                    }
                 }
                 catch{
-                    
+                    print(error.localizedDescription)
+                    completionHandler(false)
                 }
                 
             case .failure(let err):
                 print(err.localizedDescription)
+                completionHandler(false)
+                
             }
         }
     }

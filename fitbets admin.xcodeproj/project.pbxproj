@@ -10,10 +10,10 @@
 		064E178227DBAE3F00490430 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178127DBAE3F00490430 /* Constant.swift */; };
 		064E178527DBB11000490430 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178427DBB11000490430 /* RegisterModel.swift */; };
 		064E178827DBB2BF00490430 /* ApIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178727DBB2BF00490430 /* ApIManager.swift */; };
-		064E178C27DBB8DA00490430 /* Login in Sources */ = {isa = PBXBuildFile; fileRef = 064E178B27DBB8DA00490430 /* Login */; };
 		064E178E27DBC38E00490430 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178D27DBC38E00490430 /* LoginModel.swift */; };
 		068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E2B5127DCA28700FDCF09 /* LoginViewController.swift */; };
 		068E2B5427DCAD4800FDCF09 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E2B5327DCAD4800FDCF09 /* RegisterViewController.swift */; };
+		068E2B5727DCCE5300FDCF09 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E2B5627DCCE5300FDCF09 /* HomeViewController.swift */; };
 		06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB764527DA42E30000B967 /* AppDelegate.swift */; };
 		06AB764827DA42E30000B967 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB764727DA42E30000B967 /* SceneDelegate.swift */; };
 		06AB764D27DA42E30000B967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB764B27DA42E30000B967 /* Main.storyboard */; };
@@ -26,10 +26,10 @@
 		064E178127DBAE3F00490430 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		064E178427DBB11000490430 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		064E178727DBB2BF00490430 /* ApIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApIManager.swift; sourceTree = "<group>"; };
-		064E178B27DBB8DA00490430 /* Login */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login; sourceTree = "<group>"; };
 		064E178D27DBC38E00490430 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		068E2B5127DCA28700FDCF09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		068E2B5327DCAD4800FDCF09 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		068E2B5627DCCE5300FDCF09 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		06AB764227DA42E30000B967 /* fitbets admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fitbets admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06AB764527DA42E30000B967 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06AB764727DA42E30000B967 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +82,7 @@
 		064E178927DBB8B900490430 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				068E2B5527DCCE3C00FDCF09 /* MainViews */,
 				064E178A27DBB8C300490430 /* User */,
 			);
 			path = Views;
@@ -90,11 +91,18 @@
 		064E178A27DBB8C300490430 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				064E178B27DBB8DA00490430 /* Login */,
 				068E2B5127DCA28700FDCF09 /* LoginViewController.swift */,
 				068E2B5327DCAD4800FDCF09 /* RegisterViewController.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		068E2B5527DCCE3C00FDCF09 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				068E2B5627DCCE5300FDCF09 /* HomeViewController.swift */,
+			);
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 		06AB763927DA42E30000B967 = {
@@ -267,9 +275,9 @@
 				068E2B5427DCAD4800FDCF09 /* RegisterViewController.swift in Sources */,
 				064E178527DBB11000490430 /* RegisterModel.swift in Sources */,
 				064E178E27DBC38E00490430 /* LoginModel.swift in Sources */,
-				064E178C27DBB8DA00490430 /* Login in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
+				068E2B5727DCCE5300FDCF09 /* HomeViewController.swift in Sources */,
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,
 				06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */,
 				06AB764827DA42E30000B967 /* SceneDelegate.swift in Sources */,

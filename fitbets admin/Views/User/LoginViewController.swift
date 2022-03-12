@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     //login button
     @IBAction func LoginButton(_ sender: Any) {
         
-       validateFields()
+        validateFields()
     }
     
     //validate input fields
