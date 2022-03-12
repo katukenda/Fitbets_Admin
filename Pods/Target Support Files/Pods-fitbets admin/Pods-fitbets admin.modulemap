@@ -1,0 +1,6 @@
+framework module Pods_fitbets_admin {
+  umbrella header "Pods-fitbets admin-umbrella.h"
+
+  export *
+  module * { export * }
+}
