@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var error_message: UILabel!
     
     @IBOutlet weak var adminName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -32,13 +33,14 @@ class LoginViewController: UIViewController {
     
     func validateFields(){
         if adminName.text?.isEmpty == true {
-            print("No admin Name input")
+            self.error_message.text = "No admin Name input"
             return
         }
         if password.text?.isEmpty == true {
-            print("No password input")
+            self.error_message.text = "No password input"
             return
         }
+        self.error_message.text = " "
         self.loginAdmin()
     }
     
@@ -50,7 +52,23 @@ class LoginViewController: UIViewController {
         guard let password_input = password.text else { return }
         
         let login = LoginModel(admin_name: admin_name, password: password_input, device_token: device_token)
-        APIManager.shareInstance.callLoginAPI(login: login)
+        APIManager.shareInstance.callLoginAPI(login: login) { (result) in
+            switch result{
+            case .success(let json):
+                print(json)
+                let adminName = (json as! LoginResponseModel).sub.adminName
+                
+                self.error_message.text = adminName
+//                let email = (json as AnyObject).value(forKey: "token") as! String
+//                let adminName = (json as AnyObject).value(forKey: "expiresIn") as! String
+//                
+//                let loginResponse = LoginResponseModel(name: adminName, email: email)
+//                self.error_message.text = email
+//                print(loginResponse)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
         
     }
     

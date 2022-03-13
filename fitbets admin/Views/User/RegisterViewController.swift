@@ -10,6 +10,10 @@ import UIKit
 class RegisterViewController: UIViewController, UIAlertViewDelegate {
     
     
+    //let error_message = ""
+    
+    @IBOutlet weak var error_message: UILabel!
+    
     @IBOutlet weak var adminName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var mobileNumber: UITextField!
@@ -34,30 +38,32 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     
     func validateFields(){
         if adminName.text?.isEmpty == true {
-            print("No admin Name input")
+            self.error_message.text = "No admin Name input"
+            
             return
         }
         if email.text?.isEmpty == true {
-            print("No email  input")
+            self.error_message.text = "No email  input"
             return
         }
         if mobileNumber.text?.isEmpty == true {
-            print("No mobile number  input")
+            self.error_message.text = "No mobile number  input"
             return
         }
         if password.text?.isEmpty == true {
-            print("No password input")
+            self.error_message.text = "No password input"
             return
         }
         if confirmPassword.text?.isEmpty == true {
-            print("No confirm password input")
+            self.error_message.text = "No confirm password input"
             return
         }
         
         if password.text != confirmPassword.text {
-            print("Password Dismatch")
+            self.error_message.text = "Password Dismatch"
             return
         }
+        self.error_message.text = ""
         self.registerAdmin()
     }
     
@@ -72,9 +78,9 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
         let register = RegisterModel(admin_name: admin_name, email_address: e_mail, mobile_number: mobile_number, password: password_input, device_token: device_token)
         APIManager.shareInstance.callRegisterAPI(register: register)
         {
-            (isSuccess) in
+            (isSuccess, str) in
             if isSuccess {
-                let alertController = UIAlertController(title: "Register Alert!", message: "Admin registerd succesfully", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
                 
                 let cancelAction = UIAlertAction(title: "Add another", style: .cancel) { (action) in
                     // ...
@@ -91,7 +97,7 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
                 }
             }
             else {
-                let alertController = UIAlertController(title: "Register Alert!", message: "Bad Request", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
                 
                 let cancelAction = UIAlertAction(title: "Try Again", style: .cancel) { (action) in
                     // ...
