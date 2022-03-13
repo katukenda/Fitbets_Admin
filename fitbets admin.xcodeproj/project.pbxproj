@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060762CA27DDF49600614F56 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060762C927DDF49600614F56 /* Dashboard.storyboard */; };
+		060762CC27DDF4BD00614F56 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060762CB27DDF4BD00614F56 /* DashboardViewController.swift */; };
 		064E178227DBAE3F00490430 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178127DBAE3F00490430 /* Constant.swift */; };
 		064E178527DBB11000490430 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178427DBB11000490430 /* RegisterModel.swift */; };
 		064E178827DBB2BF00490430 /* ApIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178727DBB2BF00490430 /* ApIManager.swift */; };
@@ -19,10 +21,13 @@
 		06AB764D27DA42E30000B967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB764B27DA42E30000B967 /* Main.storyboard */; };
 		06AB764F27DA42E40000B967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB764E27DA42E40000B967 /* Assets.xcassets */; };
 		06AB765227DA42E40000B967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB765027DA42E40000B967 /* LaunchScreen.storyboard */; };
+		06CF318127DE01900088FBCF /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF318027DE018F0088FBCF /* TokenService.swift */; };
 		C9640B1C4928B62FA9670EFB /* Pods_fitbets_admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060762C927DDF49600614F56 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		060762CB27DDF4BD00614F56 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		064E178127DBAE3F00490430 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		064E178427DBB11000490430 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		064E178727DBB2BF00490430 /* ApIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApIManager.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		06AB764E27DA42E40000B967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06AB765127DA42E40000B967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06AB765327DA42E40000B967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CF318027DE018F0088FBCF /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fitbets_admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EADA28B6AA7CB5C5997AAFA /* Pods-fitbets admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.debug.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.debug.xcconfig"; sourceTree = "<group>"; };
 		A3BE86B1B8BD4EE0C57242F3 /* Pods-fitbets admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.release.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060762C827DDF48400614F56 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				060762C927DDF49600614F56 /* Dashboard.storyboard */,
+				060762CB27DDF4BD00614F56 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		060762CD27DE012000614F56 /* TokenService */ = {
+			isa = PBXGroup;
+			children = (
+				06CF318027DE018F0088FBCF /* TokenService.swift */,
+			);
+			path = TokenService;
+			sourceTree = "<group>";
+		};
 		064E178027DBAE1600490430 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +105,7 @@
 		064E178927DBB8B900490430 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				060762C827DDF48400614F56 /* Dashboard */,
 				068E2B5527DCCE3C00FDCF09 /* MainViews */,
 				064E178A27DBB8C300490430 /* User */,
 			);
@@ -127,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				06AB764527DA42E30000B967 /* AppDelegate.swift */,
+				060762CD27DE012000614F56 /* TokenService */,
 				064E178627DBB29800490430 /* APIManager */,
 				064E178327DBB0EC00490430 /* Model */,
 				064E178027DBAE1600490430 /* Constants */,
@@ -220,6 +245,7 @@
 				06AB765227DA42E40000B967 /* LaunchScreen.storyboard in Resources */,
 				06AB764F27DA42E40000B967 /* Assets.xcassets in Resources */,
 				06AB764D27DA42E30000B967 /* Main.storyboard in Resources */,
+				060762CA27DDF49600614F56 /* Dashboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +305,10 @@
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
 				068E2B5727DCCE5300FDCF09 /* HomeViewController.swift in Sources */,
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,
+				060762CC27DDF4BD00614F56 /* DashboardViewController.swift in Sources */,
 				06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */,
 				06AB764827DA42E30000B967 /* SceneDelegate.swift in Sources */,
+				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

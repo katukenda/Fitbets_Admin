@@ -114,37 +114,6 @@
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="63.616071428571423"/>
         </scene>
-        <!--Home View Controller-->
-        <scene sceneID="Hjs-iP-AAN">
-            <objects>
-                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o0p-Ri-OBf" customClass="HomeViewController" customModule="fitbets_admin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X4C-DQ-ODu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqA-p2-Baw">
-                                <rect key="frame" x="34" y="44" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fitbets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-xP-uXA">
-                                <rect key="frame" x="20" y="44" width="374" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="PfQ-FY-IWP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DGT-FE-PGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1442" y="743"/>
-        </scene>
         <!--Register View Controller-->
         <scene sceneID="yh0-UT-5xu">
             <objects>
@@ -199,27 +168,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Au-63-msu">
-                                <rect key="frame" x="20" y="851" width="374" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Alredy have an account? Login hear !"/>
-                                <connections>
-                                    <action selector="backToLogin:" destination="SKG-17-gol" eventType="touchUpInside" id="3mR-kB-Oi3"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8j-6u-QiO">
                                 <rect key="frame" x="20" y="303" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Au-63-msu">
+                                <rect key="frame" x="20" y="815" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Alredy have an account? Login hear !"/>
+                                <connections>
+                                    <action selector="backToLogin:" destination="SKG-17-gol" eventType="touchUpInside" id="3mR-kB-Oi3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ub2-AZ-YOa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ste-Tz-oB5" firstAttribute="top" secondItem="TdG-hR-QXR" secondAttribute="bottom" constant="40" id="0zO-IP-qw2"/>
                             <constraint firstItem="Ste-Tz-oB5" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="32w-2h-gE4"/>
-                            <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="8Au-63-msu" secondAttribute="trailing" constant="20" id="3Vf-8s-CgZ"/>
                             <constraint firstItem="h46-7f-won" firstAttribute="centerY" secondItem="Zo4-8j-VTb" secondAttribute="centerY" id="54i-nm-qFG"/>
                             <constraint firstItem="h46-7f-won" firstAttribute="top" secondItem="67u-cK-Pqd" secondAttribute="bottom" constant="20" id="85x-xg-B8O"/>
                             <constraint firstItem="yqV-I5-5rC" firstAttribute="top" secondItem="h46-7f-won" secondAttribute="bottom" constant="20" id="BrQ-4O-Bqm"/>
@@ -227,6 +195,7 @@
                             <constraint firstItem="8u5-zc-PXJ" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="CfV-r8-5m4"/>
                             <constraint firstItem="8u5-zc-PXJ" firstAttribute="top" secondItem="Ub2-AZ-YOa" secondAttribute="top" constant="20" id="Erq-6i-Vfi"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="aCL-qv-dbP" secondAttribute="trailing" constant="20" id="JaX-8g-F2T"/>
+                            <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="8Au-63-msu" secondAttribute="trailing" constant="20" id="Kl2-OF-upf"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="TeF-QD-n3q" secondAttribute="trailing" constant="20" id="Lsc-pN-cIr"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="Ste-Tz-oB5" secondAttribute="trailing" constant="20" id="OQ4-9F-lbf"/>
                             <constraint firstItem="TdG-hR-QXR" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="Oyb-EZ-A4C"/>
@@ -235,18 +204,18 @@
                             <constraint firstItem="Ste-Tz-oB5" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="R8O-zN-H9N"/>
                             <constraint firstItem="8u5-zc-PXJ" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="Rr1-tm-1GI"/>
                             <constraint firstItem="aCL-qv-dbP" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="TQx-EM-C0f"/>
-                            <constraint firstItem="8Au-63-msu" firstAttribute="bottom" secondItem="Ub2-AZ-YOa" secondAttribute="bottom" constant="20" id="V2B-8B-Fue"/>
+                            <constraint firstItem="8Au-63-msu" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="W01-MZ-1vY"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="TdG-hR-QXR" secondAttribute="trailing" constant="20" id="X4y-9J-qMe"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="8u5-zc-PXJ" secondAttribute="trailing" constant="20" id="XbL-6d-qk8"/>
                             <constraint firstItem="h46-7f-won" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="Xvc-Zp-Ooe"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="67u-cK-Pqd" secondAttribute="trailing" constant="20" id="aEE-0G-hGW"/>
-                            <constraint firstItem="8Au-63-msu" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="aaD-0r-Z99"/>
+                            <constraint firstAttribute="bottom" secondItem="8Au-63-msu" secondAttribute="bottom" constant="50" id="aTn-wP-U3o"/>
                             <constraint firstItem="A8j-6u-QiO" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="bS4-hs-3xJ"/>
                             <constraint firstItem="TeF-QD-n3q" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="cpq-hk-lS2"/>
                             <constraint firstItem="TeF-QD-n3q" firstAttribute="top" secondItem="A8j-6u-QiO" secondAttribute="bottom" constant="20" id="ewN-jq-xQd"/>
+                            <constraint firstItem="8Au-63-msu" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="fWP-2e-6uV"/>
                             <constraint firstItem="aCL-qv-dbP" firstAttribute="top" secondItem="8u5-zc-PXJ" secondAttribute="bottom" constant="30" id="h8E-AL-ech"/>
                             <constraint firstItem="67u-cK-Pqd" firstAttribute="top" secondItem="TeF-QD-n3q" secondAttribute="bottom" constant="20" id="irQ-vi-InR"/>
-                            <constraint firstItem="8Au-63-msu" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="kPF-sz-tUY"/>
                             <constraint firstItem="TdG-hR-QXR" firstAttribute="top" secondItem="yqV-I5-5rC" secondAttribute="bottom" constant="20" id="kr7-tX-hIB"/>
                             <constraint firstItem="aCL-qv-dbP" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="mX6-Iz-vfA"/>
                             <constraint firstItem="yqV-I5-5rC" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="oBq-3B-B9c"/>
@@ -270,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkB-So-9Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="64"/>
+            <point key="canvasLocation" x="1648" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xLG-tD-ZKB">
@@ -288,7 +257,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEQ-e9-EWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.565217391304358" y="63.616071428571423"/>
+            <point key="canvasLocation" x="249" y="64"/>
         </scene>
     </scenes>
     <resources>

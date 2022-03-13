@@ -57,14 +57,19 @@ class LoginViewController: UIViewController {
             case .success(let json):
                 print(json)
                 let adminName = (json as! LoginResponseModel).sub.adminName
+                let userToken = (json as! LoginResponseModel).token
+                TokenService.tokenInstance.saveToken(token: userToken)
+                //go to dashboard
+                let DashboardVC = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController
+                DashboardVC?.strName = adminName
+                self.navigationController?.pushViewController(DashboardVC!, animated: true)
                 
-                self.error_message.text = adminName
-//                let email = (json as AnyObject).value(forKey: "token") as! String
-//                let adminName = (json as AnyObject).value(forKey: "expiresIn") as! String
-//                
-//                let loginResponse = LoginResponseModel(name: adminName, email: email)
-//                self.error_message.text = email
-//                print(loginResponse)
+                //                let email = (json as AnyObject).value(forKey: "token") as! String
+                //                let adminName = (json as AnyObject).value(forKey: "expiresIn") as! String
+                //
+                //                let loginResponse = LoginResponseModel(name: adminName, email: email)
+                //                self.error_message.text = email
+                //                print(loginResponse)
             case .failure(let err):
                 print(err.localizedDescription)
             }

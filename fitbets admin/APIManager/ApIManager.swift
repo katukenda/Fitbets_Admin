@@ -80,4 +80,21 @@ class APIManager{
             }
         }
     }
+    
+    func callingLogOutAPI(vc: UIViewController){
+        let headers: HTTPHeaders = [
+            "user_token": "\(TokenService.tokenInstance.getToken)"
+        ]
+        AF.request(login_url, method: .get, headers: headers).response{
+            response in
+            switch response.result{
+            case .success(_):
+                TokenService.tokenInstance.removeToken()
+                vc.navigationController?.popToRootViewController(animated: true)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
 }

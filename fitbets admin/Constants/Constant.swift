@@ -17,3 +17,9 @@ let base_url = "http://ec2-35-83-63-15.us-west-2.compute.amazonaws.com:8000/admi
 //endpoints
 let login_url = "\(base_url)/login"
 let register_url = "\(base_url)/register"
+let logout_url = "\(base_url)/logout"
+
+
+struct TokenKey{
+    static let userLogin = "USER_LOGIN_KEY"
+}
