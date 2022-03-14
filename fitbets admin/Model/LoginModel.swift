@@ -30,3 +30,9 @@ struct Sub: Codable {
         case mobileNumber = "mobile_number"
     }
 }
+
+struct LoginErrorModel: Codable {
+    let success: Bool
+    let message: String
+    
+}

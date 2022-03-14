@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,7 +33,7 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     //register
     
     @IBAction func registerButton(_ sender: Any) {
-        
+       
         validateFields()
     }
     
@@ -69,7 +70,7 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     
     //register function
     func registerAdmin(){
-        
+        spinner.startAnimating()
         guard let admin_name = adminName.text else { return }
         guard let e_mail = email.text else { return }
         guard let mobile_number = mobileNumber.text else { return }
@@ -78,8 +79,10 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
         let register = RegisterModel(admin_name: admin_name, email_address: e_mail, mobile_number: mobile_number, password: password_input, device_token: device_token)
         APIManager.shareInstance.callRegisterAPI(register: register)
         {
+            
             (isSuccess, str) in
             if isSuccess {
+                self.spinner.stopAnimating()
                 let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
                 
                 let cancelAction = UIAlertAction(title: "Add another", style: .cancel) { (action) in
@@ -97,6 +100,7 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
                 }
             }
             else {
+                self.spinner.stopAnimating()
                 let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
                 
                 let cancelAction = UIAlertAction(title: "Try Again", style: .cancel) { (action) in

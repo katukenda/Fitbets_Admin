@@ -14,13 +14,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var adminName: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     //dismiss keaboard when touch view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
     }
     
     //login button
@@ -46,7 +49,7 @@ class LoginViewController: UIViewController {
     
     // login function
     func loginAdmin() {
-        
+        spinner.startAnimating()
         guard let admin_name = adminName.text else { return }
         
         guard let password_input = password.text else { return }
@@ -60,9 +63,10 @@ class LoginViewController: UIViewController {
                 let userToken = (json as! LoginResponseModel).token
                 TokenService.tokenInstance.saveToken(token: userToken)
                 //go to dashboard
-                let DashboardVC = UIStoryboard.init(name: "Dashboard", bundle: Bundle.main).instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController
-                DashboardVC?.strName = adminName
-                self.navigationController?.pushViewController(DashboardVC!, animated: true)
+                self.spinner.stopAnimating()
+                let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "home") as? HomeViewController
+                loginVC?.strName = adminName
+                self.navigationController?.pushViewController(loginVC!, animated: true)
                 
                 //                let email = (json as AnyObject).value(forKey: "token") as! String
                 //                let adminName = (json as AnyObject).value(forKey: "expiresIn") as! String
@@ -71,6 +75,16 @@ class LoginViewController: UIViewController {
                 //                self.error_message.text = email
                 //                print(loginResponse)
             case .failure(let err):
+                self.spinner.stopAnimating()
+                // create the alert
+                let alert = UIAlertController(title: "Fitbets Login", message: "something ent wrong. Please try again!", preferredStyle: UIAlertController.Style.alert)
+
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+                
                 print(err.localizedDescription)
             }
         }

@@ -33,6 +33,7 @@ class APIManager{
                     else {
                         completionHandler(false, "Pleaese Try Again")
                     }
+                    
                 }
                 catch{
                     print(error.localizedDescription)
@@ -57,24 +58,23 @@ class APIManager{
             switch response.result{
             case .success(let data):
                 do{
-                    
                     let json = try JSONDecoder().decode(LoginResponseModel.self, from: data!)
-                   // print(json)
-                  //  let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                    // print(json)
+                    //  let json = try JSONSerialization.jsonObject(with: data!, options: [])
                     if response.response?.statusCode == 200 {
                         completionHandler(.success(json))
                     }
+                   
                     else {
                         completionHandler(.failure(.custom(message: "Please check the network connectivity")))
                     }
                 }
                 catch{
-                    print(error.localizedDescription)
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
                 
             case .failure(let err):
-                print(err.localizedDescription)
+                 
                 completionHandler(.failure(.custom(message: "Please try again")))
                 
             }
@@ -82,19 +82,18 @@ class APIManager{
     }
     
     func callingLogOutAPI(vc: UIViewController){
-        let headers: HTTPHeaders = [
-            "user_token": "\(TokenService.tokenInstance.getToken)"
-        ]
-        AF.request(login_url, method: .get, headers: headers).response{
-            response in
-            switch response.result{
-            case .success(_):
-                TokenService.tokenInstance.removeToken()
-                vc.navigationController?.popToRootViewController(animated: true)
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
-    
+           let headers: HTTPHeaders = [
+               "user_token": "\(TokenService.tokenInstance.getToken)"
+           ]
+           AF.request(login_url, method: .get, headers: headers).response{
+               response in
+               switch response.result{
+               case .success(_):
+                   TokenService.tokenInstance.removeToken()
+                   vc.navigationController?.popToRootViewController(animated: true)
+               case .failure(let err):
+                   print(err.localizedDescription)
+               }
+           }
+       }
 }

@@ -65,6 +65,13 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-o6-NiF">
+                                <rect key="frame" x="157" y="671" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Xpl-bz-keB"/>
+                                    <constraint firstAttribute="width" constant="100" id="zhj-YI-7fJ"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,6 +80,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p9e-Jp-f7k" secondAttribute="bottom" constant="20" id="3jA-pR-wQ7"/>
                             <constraint firstItem="wmD-4l-Trd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5A0-Bi-LCj"/>
                             <constraint firstItem="Xzi-qJ-E5B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6UF-ZO-7a3"/>
+                            <constraint firstItem="Kzb-o6-NiF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8TN-Om-A7a"/>
                             <constraint firstItem="Pr7-1H-P2l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bdm-f3-PjC"/>
                             <constraint firstItem="6QG-dW-nN8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CmG-kV-njA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HzL-ep-wzU" secondAttribute="trailing" constant="20" id="Fah-6z-HkP"/>
@@ -101,6 +109,7 @@
                             <constraint firstItem="HzL-ep-wzU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s2f-gm-6MH"/>
                             <constraint firstItem="Xzi-qJ-E5B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wQM-56-iaH"/>
                             <constraint firstItem="haT-Oh-vol" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yCp-1b-kvJ"/>
+                            <constraint firstItem="p9e-Jp-f7k" firstAttribute="top" secondItem="Kzb-o6-NiF" secondAttribute="bottom" constant="40" id="z97-uk-QHb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5zO-y6-rKi"/>
@@ -108,6 +117,7 @@
                         <outlet property="adminName" destination="wmD-4l-Trd" id="lOW-pT-BxF"/>
                         <outlet property="error_message" destination="6QG-dW-nN8" id="DK6-gf-ajz"/>
                         <outlet property="password" destination="haT-Oh-vol" id="ZNn-Kh-zdX"/>
+                        <outlet property="spinner" destination="Kzb-o6-NiF" id="bYT-FG-gUI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -182,6 +192,9 @@
                                     <action selector="backToLogin:" destination="SKG-17-gol" eventType="touchUpInside" id="3mR-kB-Oi3"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wE7-pO-dcx">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ub2-AZ-YOa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -197,6 +210,7 @@
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="aCL-qv-dbP" secondAttribute="trailing" constant="20" id="JaX-8g-F2T"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="8Au-63-msu" secondAttribute="trailing" constant="20" id="Kl2-OF-upf"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="TeF-QD-n3q" secondAttribute="trailing" constant="20" id="Lsc-pN-cIr"/>
+                            <constraint firstItem="wE7-pO-dcx" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="NrX-TO-tUp"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="Ste-Tz-oB5" secondAttribute="trailing" constant="20" id="OQ4-9F-lbf"/>
                             <constraint firstItem="TdG-hR-QXR" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="Oyb-EZ-A4C"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="A8j-6u-QiO" secondAttribute="trailing" constant="20" id="PXp-TR-ifB"/>
@@ -208,6 +222,7 @@
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="TdG-hR-QXR" secondAttribute="trailing" constant="20" id="X4y-9J-qMe"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="8u5-zc-PXJ" secondAttribute="trailing" constant="20" id="XbL-6d-qk8"/>
                             <constraint firstItem="h46-7f-won" firstAttribute="centerX" secondItem="Zo4-8j-VTb" secondAttribute="centerX" id="Xvc-Zp-Ooe"/>
+                            <constraint firstItem="wE7-pO-dcx" firstAttribute="centerY" secondItem="Zo4-8j-VTb" secondAttribute="centerY" id="YLP-WG-Qqu"/>
                             <constraint firstItem="Ub2-AZ-YOa" firstAttribute="trailing" secondItem="67u-cK-Pqd" secondAttribute="trailing" constant="20" id="aEE-0G-hGW"/>
                             <constraint firstAttribute="bottom" secondItem="8Au-63-msu" secondAttribute="bottom" constant="50" id="aTn-wP-U3o"/>
                             <constraint firstItem="A8j-6u-QiO" firstAttribute="leading" secondItem="Ub2-AZ-YOa" secondAttribute="leading" constant="20" id="bS4-hs-3xJ"/>
@@ -235,6 +250,7 @@
                         <outlet property="error_message" destination="A8j-6u-QiO" id="APh-GH-Rwr"/>
                         <outlet property="mobileNumber" destination="h46-7f-won" id="GYT-Cv-uSB"/>
                         <outlet property="password" destination="yqV-I5-5rC" id="ctd-Wk-duC"/>
+                        <outlet property="spinner" destination="wE7-pO-dcx" id="8Hf-RD-l5o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkB-So-9Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -259,10 +275,53 @@
             </objects>
             <point key="canvasLocation" x="249" y="64"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="VsA-tQ-wCc">
+            <objects>
+                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4kD-Ic-HPx" customClass="HomeViewController" customModule="fitbets_admin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="10o-9c-FZS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-DD-SvY">
+                                <rect key="frame" x="74" y="103" width="294" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-s2-9cs">
+                                <rect key="frame" x="358" y="93" width="45" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="power" catalog="system">
+                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOut:" destination="4kD-Ic-HPx" eventType="touchUpInside" id="JRN-sS-qO3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jg1-Nq-P0B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbName" destination="XA1-DD-SvY" id="Bhr-QO-mVt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rtY-jz-aHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979.71014492753636" y="709.82142857142856"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="power" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
