@@ -18,6 +18,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       // self.checkOlredyLogged()
+        
+    }
+    
+    func checkOlredyLogged(){
+        if TokenService.tokenInstance.checkForLogin(){
+//            let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "admin") as? AdminViewController
+//            self.navigationController?.pushViewController(loginVC!, animated: true)
+   }
+        else {
+             let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "login") as? LoginViewController
+            self.navigationController?.pushViewController(loginVC!, animated: true)
+        }
     }
     
     //dismiss keaboard when touch view
@@ -54,34 +67,30 @@ class LoginViewController: UIViewController {
         
         guard let password_input = password.text else { return }
         
-        let login = LoginModel(admin_name: admin_name, password: password_input, device_token: device_token)
+        let login = LoginModel(admin_name: "katukenda3", password: "pass@1234", device_token: device_token)
         APIManager.shareInstance.callLoginAPI(login: login) { (result) in
             switch result{
             case .success(let json):
                 print(json)
                 let adminName = (json as! LoginResponseModel).sub.adminName
+                let email_address = (json as! LoginResponseModel).sub.emailAddress
+                let mobile_number = (json as! LoginResponseModel).sub.mobileNumber
+                let admin_id = (json as! LoginResponseModel).sub.id
                 let userToken = (json as! LoginResponseModel).token
                 TokenService.tokenInstance.saveToken(token: userToken)
+                
+                TokenService.tokenInstance.saveProfileDeatails(name: adminName, email: email_address, mobile: mobile_number, id: admin_id)
                 //go to dashboard
                 self.spinner.stopAnimating()
                 let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "home") as? HomeViewController
                 loginVC?.strName = adminName
                 self.navigationController?.pushViewController(loginVC!, animated: true)
-                
-                //                let email = (json as AnyObject).value(forKey: "token") as! String
-                //                let adminName = (json as AnyObject).value(forKey: "expiresIn") as! String
-                //
-                //                let loginResponse = LoginResponseModel(name: adminName, email: email)
-                //                self.error_message.text = email
-                //                print(loginResponse)
             case .failure(let err):
                 self.spinner.stopAnimating()
                 // create the alert
                 let alert = UIAlertController(title: "Fitbets Login", message: "something ent wrong. Please try again!", preferredStyle: UIAlertController.Style.alert)
-
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
                 

@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lbName.text = strName
-        
+        self.title = "Home"
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
  
@@ -26,5 +26,15 @@ class HomeViewController: UIViewController {
                TokenService.tokenInstance.removeToken()
                self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    
+    @IBAction func nextTest(_ sender: Any) {
+        if let tabBar = presentingViewController as? UITabBarController {
+               tabBar.selectedIndex = 1
+           }
+           dismiss(animated: true)
+        
+    }
+    
     
 }

@@ -13,6 +13,13 @@
 		064E178E27DBC38E00490430 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178D27DBC38E00490430 /* LoginModel.swift */; };
 		066F349127DF1B900024C952 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349027DF1B900024C952 /* UIApplication + Extension.swift */; };
 		066F349427DF29A90024C952 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349327DF29A90024C952 /* HomeViewController.swift */; };
+		066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349C27DF99940024C952 /* ProfileViewController.swift */; };
+		066F349F27DF99B60024C952 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349E27DF99B60024C952 /* AdminViewController.swift */; };
+		066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34A327DF9A110024C952 /* ChalengesViewController.swift */; };
+		066F34A627DF9A1F0024C952 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34A527DF9A1F0024C952 /* CategoryViewController.swift */; };
+		066F34A827DF9A2C0024C952 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34A727DF9A2C0024C952 /* UsersViewController.swift */; };
+		066F34AB27DF9C240024C952 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34AA27DF9C240024C952 /* SettingViewController.swift */; };
+		067E97C427E032E600D37F95 /* EditProfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E97C327E032E600D37F95 /* EditProfieViewController.swift */; };
 		068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E2B5127DCA28700FDCF09 /* LoginViewController.swift */; };
 		068E2B5427DCAD4800FDCF09 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E2B5327DCAD4800FDCF09 /* RegisterViewController.swift */; };
 		06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB764527DA42E30000B967 /* AppDelegate.swift */; };
@@ -30,6 +37,13 @@
 		064E178D27DBC38E00490430 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		066F349027DF1B900024C952 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		066F349327DF29A90024C952 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		066F349C27DF99940024C952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		066F349E27DF99B60024C952 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		066F34A327DF9A110024C952 /* ChalengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalengesViewController.swift; sourceTree = "<group>"; };
+		066F34A527DF9A1F0024C952 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		066F34A727DF9A2C0024C952 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		066F34AA27DF9C240024C952 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		067E97C327E032E600D37F95 /* EditProfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfieViewController.swift; sourceTree = "<group>"; };
 		068E2B5127DCA28700FDCF09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		068E2B5327DCAD4800FDCF09 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		06AB764227DA42E30000B967 /* fitbets admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fitbets admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,19 +106,26 @@
 		064E178927DBB8B900490430 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				067E97C227E032AE00D37F95 /* Admins */,
+				066F34A927DF9C110024C952 /* Setting */,
+				066F34A227DF99E60024C952 /* Challenges */,
+				066F34A127DF99D40024C952 /* Category */,
+				066F34A027DF99BF0024C952 /* Users */,
 				066F349227DF299A0024C952 /* Home */,
-				064E178A27DBB8C300490430 /* Admin */,
+				064E178A27DBB8C300490430 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		064E178A27DBB8C300490430 /* Admin */ = {
+		064E178A27DBB8C300490430 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				068E2B5127DCA28700FDCF09 /* LoginViewController.swift */,
 				068E2B5327DCAD4800FDCF09 /* RegisterViewController.swift */,
+				066F349C27DF99940024C952 /* ProfileViewController.swift */,
+				067E97C327E032E600D37F95 /* EditProfieViewController.swift */,
 			);
-			path = Admin;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		066F348F27DF1B740024C952 /* Extension */ = {
@@ -128,6 +149,46 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		066F34A027DF99BF0024C952 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				066F34A727DF9A2C0024C952 /* UsersViewController.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		066F34A127DF99D40024C952 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				066F34A527DF9A1F0024C952 /* CategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		066F34A227DF99E60024C952 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				066F34A327DF9A110024C952 /* ChalengesViewController.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		066F34A927DF9C110024C952 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				066F34AA27DF9C240024C952 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		067E97C227E032AE00D37F95 /* Admins */ = {
+			isa = PBXGroup;
+			children = (
+				066F349E27DF99B60024C952 /* AdminViewController.swift */,
+			);
+			path = Admins;
 			sourceTree = "<group>";
 		};
 		06AB763927DA42E30000B967 = {
@@ -301,10 +362,17 @@
 			files = (
 				068E2B5427DCAD4800FDCF09 /* RegisterViewController.swift in Sources */,
 				064E178527DBB11000490430 /* RegisterModel.swift in Sources */,
+				066F34A627DF9A1F0024C952 /* CategoryViewController.swift in Sources */,
+				067E97C427E032E600D37F95 /* EditProfieViewController.swift in Sources */,
+				066F34AB27DF9C240024C952 /* SettingViewController.swift in Sources */,
 				064E178E27DBC38E00490430 /* LoginModel.swift in Sources */,
+				066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
+				066F34A827DF9A2C0024C952 /* UsersViewController.swift in Sources */,
+				066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */,
 				066F349127DF1B900024C952 /* UIApplication + Extension.swift in Sources */,
+				066F349F27DF99B60024C952 /* AdminViewController.swift in Sources */,
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,
 				06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,

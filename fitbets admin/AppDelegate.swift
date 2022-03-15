@@ -15,15 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let vc: UIViewController?
         if TokenService.tokenInstance.checkForLogin(){
+          //
+            
+            
+//
+   }
+        else {
             vc = HomeViewController()
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                   let home = mainStoryboard.instantiateViewController(withIdentifier: "home") as! HomeViewController
-                   self.window?.rootViewController = home
-            
- 
-        }
-        else {
-//            vc = LoginViewController()
+                   let login = mainStoryboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+                   self.window?.rootViewController = login
         }
         
         //let navVC = UINavigationController(rootViewController: vc!)
