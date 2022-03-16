@@ -107,12 +107,12 @@ class APIManager{
             let headers: HTTPHeaders = [
                 "Authorization": TokenService.tokenInstance.getToken()
             ]
-            AF.request(updateProfile_url, method: .put, parameters: updateProfile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+            let id = TokenService.tokenInstance.getId()
+            AF.request(updateProfile_url + "\(id)", method: .put, parameters: updateProfile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
                 debugPrint(response)
                 switch response.result{
                 case .success(let data):
                     do{
-                        
                         let json = try JSONDecoder().decode(ProfileUpdateresponse.self, from: data!)
                         if response.response?.statusCode == 200 {
                             completionHandler(.success(json))
@@ -175,4 +175,36 @@ class APIManager{
 //        }
 //    }
 //
+    
+    
+    
+    
+    func callgetAllAdmin(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        AF.request(getAllAdmin_irl,method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetAllAdminResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+
+            case .failure(let err):
+
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+
 }

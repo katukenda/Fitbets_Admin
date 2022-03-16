@@ -27,6 +27,7 @@
 		06AB764F27DA42E40000B967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB764E27DA42E40000B967 /* Assets.xcassets */; };
 		06AB765227DA42E40000B967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB765027DA42E40000B967 /* LaunchScreen.storyboard */; };
 		06CF318127DE01900088FBCF /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF318027DE018F0088FBCF /* TokenService.swift */; };
+		06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */; };
 		C9640B1C4928B62FA9670EFB /* Pods_fitbets_admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		06AB765127DA42E40000B967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06AB765327DA42E40000B967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06CF318027DE018F0088FBCF /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDetailsModel.swift; sourceTree = "<group>"; };
 		3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fitbets_admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EADA28B6AA7CB5C5997AAFA /* Pods-fitbets admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.debug.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.debug.xcconfig"; sourceTree = "<group>"; };
 		A3BE86B1B8BD4EE0C57242F3 /* Pods-fitbets admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.release.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				064E178427DBB11000490430 /* RegisterModel.swift */,
 				064E178D27DBC38E00490430 /* LoginModel.swift */,
+				06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				066F349127DF1B900024C952 /* UIApplication + Extension.swift in Sources */,
 				066F349F27DF99B60024C952 /* AdminViewController.swift in Sources */,
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,
+				06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */,
 				06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,
 				066F349427DF29A90024C952 /* HomeViewController.swift in Sources */,

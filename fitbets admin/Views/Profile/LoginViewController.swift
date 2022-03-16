@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
         
         guard let password_input = password.text else { return }
         
-        let login = LoginModel(admin_name: "katukenda3", password: "pass@1234", device_token: device_token)
+        let login = LoginModel(admin_name: "katukenda2", password: "pass@1234", device_token: device_token)
         APIManager.shareInstance.callLoginAPI(login: login) { (result) in
             switch result{
             case .success(let json):

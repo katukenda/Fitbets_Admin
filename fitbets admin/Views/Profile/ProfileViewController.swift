@@ -17,9 +17,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reloadView()
-        
-        
-        
+
     }
     
     @IBAction func represhtapped(_ sender: Any) {
