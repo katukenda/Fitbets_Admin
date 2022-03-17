@@ -103,87 +103,86 @@ class APIManager{
         }
     }
     
-        func callUpdateProfile(updateProfile: UpdateProfileModel, completionHandler: @escaping Handler){
-            let headers: HTTPHeaders = [
-                "Authorization": TokenService.tokenInstance.getToken()
-            ]
-            let id = TokenService.tokenInstance.getId()
-            AF.request(updateProfile_url + "\(id)", method: .put, parameters: updateProfile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
-                debugPrint(response)
-                switch response.result{
-                case .success(let data):
-                    do{
-                        let json = try JSONDecoder().decode(ProfileUpdateresponse.self, from: data!)
-                        if response.response?.statusCode == 200 {
-                            completionHandler(.success(json))
-                        }
-                        else {
-                            completionHandler(.failure(.custom(message: "Please check the network connectivity")))
-                        }
+    func callUpdateProfile(updateProfile: UpdateProfileModel, completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let id = TokenService.tokenInstance.getId()
+        AF.request(updateProfile_url + "\(id)", method: .put, parameters: updateProfile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(ProfileUpdateresponse.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
                     }
-                    catch{
-                        completionHandler(.failure(.custom(message: "Please try again")))
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
                     }
-    
-                case .failure(let err):
-    
+                }
+                catch{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
+                
+            case .failure(let err):
+                
+                completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
+    }
     
     
-//    func callUpdateProfile(updateprofile: UpdateProfileModel, completionHandler: @escaping (Bool, String) -> ()){
-//        let headers: HTTPHeaders = [
-//            "Authorization": TokenService.tokenInstance.getToken()
-//        ]
-//        AF.request(updateProfile_url, method: .put, parameters: updateprofile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
-//            debugPrint(response)
-//            switch response.result{
-//            case .success(let data):
-//                do{
-//
-//                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
-//
-//                    if response.response?.statusCode == 200 {
-//
-//                        if let dictionary = json as? [String: Any] {
-//                            if let message = dictionary["message"] as? String {
-//                                completionHandler(true,message)
-//                            }
-//
-//                        }
-//                    }
-//                    else {
-//                        if let dictionary = json as? [String: Any] {
-//                            if let message = dictionary["message"] as? String {
-//                                completionHandler(true,message)
-//                            }
-//                        }
-//                    }
-//                }
-//                catch{
-//                    print(error.localizedDescription)
-//                    completionHandler(false,error.localizedDescription)
-//                }
-//
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//                completionHandler(false,err.localizedDescription)
-//
-//            }
-//        }
-//    }
-//
-    
-    
+    //    func callUpdateProfile(updateprofile: UpdateProfileModel, completionHandler: @escaping (Bool, String) -> ()){
+    //        let headers: HTTPHeaders = [
+    //            "Authorization": TokenService.tokenInstance.getToken()
+    //        ]
+    //        AF.request(updateProfile_url, method: .put, parameters: updateprofile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+    //            debugPrint(response)
+    //            switch response.result{
+    //            case .success(let data):
+    //                do{
+    //
+    //                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+    //
+    //                    if response.response?.statusCode == 200 {
+    //
+    //                        if let dictionary = json as? [String: Any] {
+    //                            if let message = dictionary["message"] as? String {
+    //                                completionHandler(true,message)
+    //                            }
+    //
+    //                        }
+    //                    }
+    //                    else {
+    //                        if let dictionary = json as? [String: Any] {
+    //                            if let message = dictionary["message"] as? String {
+    //                                completionHandler(true,message)
+    //                            }
+    //                        }
+    //                    }
+    //                }
+    //                catch{
+    //                    print(error.localizedDescription)
+    //                    completionHandler(false,error.localizedDescription)
+    //                }
+    //
+    //            case .failure(let err):
+    //                print(err.localizedDescription)
+    //                completionHandler(false,err.localizedDescription)
+    //
+    //            }
+    //        }
+    //    }
+    //
     
     
     func callgetAllAdmin(completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
             "Authorization": TokenService.tokenInstance.getToken()
         ]
-        AF.request(getAllAdmin_irl,method: .get, headers: headers).response{ response in
+        
+        AF.request(getAllAdmin_url,method: .get, headers: headers).response{ response in
             debugPrint(response)
             switch response.result{
             case .success(let data):
@@ -200,12 +199,39 @@ class APIManager{
                 catch{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
-
             case .failure(let err):
-
+                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
     }
-
+    
+    func callgetAdminById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_adminId = TokenService.tokenInstance.getAdminId()
+        AF.request(getAdminById_url + "\(selected_adminId)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetAdminProfileDataResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
 }

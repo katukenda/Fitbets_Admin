@@ -15,6 +15,9 @@ class TokenService{
     func saveToken(token: String){
         userDefault.set(token, forKey: TokenKey.userLogin)
     }
+    func saveAdminId(id: Int){
+        userDefault.set(id, forKey: SelectedAdminKey.seletedAdminId)
+    }
     
     func saveProfileDeatails(name: String,email: String, mobile: String, id: Int){
         userDefault.set(name, forKey: profileKey.userName)
@@ -32,6 +35,14 @@ class TokenService{
         }
         else {
             return ""
+        }
+    }
+    func getAdminId() -> Int{
+        if let id = userDefault.object(forKey: SelectedAdminKey.seletedAdminId) as? Int {
+            return id
+        }
+        else {
+            return -1
         }
     }
     
@@ -83,6 +94,9 @@ class TokenService{
     //remove
     func removeToken(){
         userDefault.removeObject(forKey: TokenKey.userLogin)
+    }
+    func removeselectedAdminId(){
+        userDefault.removeObject(forKey: SelectedAdminKey.seletedAdminId)
     }
     func removeProfileDeatails(){
         userDefault.removeObject(forKey: profileKey.userName)

@@ -19,9 +19,8 @@ let login_url = "\(base_url)/login"
 let register_url = "\(base_url)/register"
 let logout_url = "\(base_url)/logout"
 let updateProfile_url = "\(base_url)/update/"
-let getAllAdmin_irl = "\(base_url)/getAllAdmin"
-
-
+let getAllAdmin_url = "\(base_url)/getAllAdmin"
+let getAdminById_url = "\(base_url)/getAdmin/"
 
 
 struct TokenKey{
@@ -35,4 +34,7 @@ struct profileKey{
     static let userMobile = "USER_MOBILE"
 }
 
+struct SelectedAdminKey{
+    static let seletedAdminId = "SELECTED_ADMIN_ID"
+}
 

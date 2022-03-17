@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06177D1627E2FCEC0007FEA3 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06177D1527E2FCEC0007FEA3 /* AdminProfileViewController.swift */; };
+		06177D1827E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06177D1727E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift */; };
 		06342B3D27E24D8E00918F89 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06342B3C27E24D8E00918F89 /* AdminTableViewCell.swift */; };
 		064E178227DBAE3F00490430 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178127DBAE3F00490430 /* Constant.swift */; };
 		064E178527DBB11000490430 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178427DBB11000490430 /* RegisterModel.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06177D1527E2FCEC0007FEA3 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
+		06177D1727E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAdminProfileDataResponseModel.swift; sourceTree = "<group>"; };
 		06342B3C27E24D8E00918F89 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
 		064E178127DBAE3F00490430 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		064E178427DBB11000490430 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				064E178427DBB11000490430 /* RegisterModel.swift */,
 				064E178D27DBC38E00490430 /* LoginModel.swift */,
 				06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */,
+				06177D1727E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 			children = (
 				066F349E27DF99B60024C952 /* AdminViewController.swift */,
 				06342B3C27E24D8E00918F89 /* AdminTableViewCell.swift */,
+				06177D1527E2FCEC0007FEA3 /* AdminProfileViewController.swift */,
 			);
 			path = Admins;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				067E97C427E032E600D37F95 /* EditProfieViewController.swift in Sources */,
 				066F34AB27DF9C240024C952 /* SettingViewController.swift in Sources */,
 				064E178E27DBC38E00490430 /* LoginModel.swift in Sources */,
+				06177D1627E2FCEC0007FEA3 /* AdminProfileViewController.swift in Sources */,
 				066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
@@ -383,6 +390,7 @@
 				06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */,
 				06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */,
 				06342B3D27E24D8E00918F89 /* AdminTableViewCell.swift in Sources */,
+				06177D1827E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,
 				066F349427DF29A90024C952 /* HomeViewController.swift in Sources */,
 			);

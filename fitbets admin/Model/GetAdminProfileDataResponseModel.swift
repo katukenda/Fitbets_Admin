@@ -1,24 +1,23 @@
 //
-//  AdminDetailsModel.swift
+//  GetAdminProfileDataResponseModel.swift
 //  fitbets admin
 //
-//  Created by Janitha Katukenda on 2022-03-16.
+//  Created by Janitha Katukenda on 2022-03-17.
 //
 
 import Foundation
 
-//struct Photo: Decodable {
-//    let title: String
-//}
-struct GetAllAdminResponseModel: Codable {
+
+struct GetAdminProfileDataResponseModel: Codable {
     let success: Bool
     let code: Int
     let status: String
-    let data: [Datum]
+    let data: [GADBId]
     let message: String
 }
+
 // MARK: - Datum
-struct Datum: Codable {
+struct GADBId: Codable {
     let id: Int
     let adminName, emailAddress, mobileNumber, hash: String
     let salt, deviceToken: String

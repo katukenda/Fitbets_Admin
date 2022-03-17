@@ -31,12 +31,8 @@ import Alamofire
             (result) in
             switch result{
             case .success(let json):
-                print(json)
                 self.jsonDataAdmin = (json as! GetAllAdminResponseModel).data
                 self.tableView.reloadData()
-                print("")
-                print(self.jsonDataAdmin.count)
-                print("")
                 self.spinner.stopAnimating()
             case .failure(let err):
                 self.spinner.stopAnimating()
@@ -72,16 +68,21 @@ extension AdminViewController: UITableViewDelegate, UITableViewDataSource{
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selected_admin_id = self.jsonDataAdmin[indexPath.row].id
+        TokenService.tokenInstance.saveAdminId(id: selected_admin_id)
+        
+        let viewAdminProfileVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AdminProfileViewController") as? AdminProfileViewController
+        viewAdminProfileVC?.selected_A_ID = "\(selected_admin_id)"
+        //loginVC?.strName = adminName
+        self.navigationController?.pushViewController(viewAdminProfileVC!, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         
        if let cell = tableView.dequeueReusableCell(withIdentifier: "AdminCell", for: indexPath) as? AdminTableViewCell {
            cell.admin_name.text = self.jsonDataAdmin[indexPath.row].emailAddress
-           
-           //self.jsonDataAdmin[indexPath.row].adminName
-           
-           
            return cell
         }
         return UITableViewCell()
