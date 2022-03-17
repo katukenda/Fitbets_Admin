@@ -21,6 +21,7 @@ import Alamofire
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.reloadData()
         self.getAllAdmin()
     }
                             
@@ -37,7 +38,7 @@ import Alamofire
             case .failure(let err):
                 self.spinner.stopAnimating()
                 // create the alert
-                let alert = UIAlertController(title: "Fitbets Profile Update", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Fitbets Admin List", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 print(err.localizedDescription)
@@ -82,7 +83,7 @@ extension AdminViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
        if let cell = tableView.dequeueReusableCell(withIdentifier: "AdminCell", for: indexPath) as? AdminTableViewCell {
-           cell.admin_name.text = self.jsonDataAdmin[indexPath.row].emailAddress
+           cell.admin_name.text = self.jsonDataAdmin[indexPath.row].adminName
            return cell
         }
         return UITableViewCell()

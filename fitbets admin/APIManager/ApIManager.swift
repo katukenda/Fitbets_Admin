@@ -234,4 +234,32 @@ class APIManager{
         }
     }
     
+    func callDeleteAdminById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_adminId = TokenService.tokenInstance.getAdminId()
+        AF.request(deleteAdminById_url + "\(selected_adminId)",method: .delete, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(DeleteAdminModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
 }

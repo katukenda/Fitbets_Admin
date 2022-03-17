@@ -21,6 +21,7 @@ let logout_url = "\(base_url)/logout"
 let updateProfile_url = "\(base_url)/update/"
 let getAllAdmin_url = "\(base_url)/getAllAdmin"
 let getAdminById_url = "\(base_url)/getAdmin/"
+let deleteAdminById_url = "\(base_url)/deleteAdmin/"
 
 
 struct TokenKey{

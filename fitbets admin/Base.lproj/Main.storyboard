@@ -563,14 +563,14 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdminCell" id="oaB-Jz-CWX" customClass="AdminTableViewCell" customModule="fitbets_admin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="410" height="44"/>
+                                                        <rect key="frame" x="0.0" y="50" width="410" height="44.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oaB-Jz-CWX" id="6s7-Aw-3lo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="44.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd1-ij-DtU">
-                                                                    <rect key="frame" x="20" y="12" width="370" height="21"/>
+                                                                    <rect key="frame" x="20" y="12" width="370" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -934,13 +934,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-ta-ZyF">
-                                <rect key="frame" x="20" y="269" width="374" height="21"/>
+                                <rect key="frame" x="20" y="269" width="374" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Mobile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxj-eU-h7c">
-                                <rect key="frame" x="20" y="310" width="374" height="21"/>
+                                <rect key="frame" x="20" y="309" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -952,16 +952,6 @@
                                     <constraint firstAttribute="width" constant="100" id="ygQ-dw-wEZ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-iM-NYe">
-                                <rect key="frame" x="20" y="371" width="374" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Delete Admin">
-                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="deleteAdmin:" destination="nDy-Vo-EZD" eventType="touchUpInside" id="cAx-c6-jrZ"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="y2z-Q0-F78">
                                 <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
@@ -969,10 +959,29 @@
                                     <constraint firstAttribute="height" constant="100" id="GLl-QI-BV6"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-JP-X2o">
+                                <rect key="frame" x="20" y="360" width="374" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Delete Admin">
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteAdminButton:" destination="nDy-Vo-EZD" eventType="touchUpInside" id="11V-1S-NjC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi1-OK-MlT">
+                                <rect key="frame" x="72" y="258" width="270" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fGL-uA-jr4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ook-JP-X2o" firstAttribute="leading" secondItem="fGL-uA-jr4" secondAttribute="leading" constant="20" id="5X6-vv-W23"/>
+                            <constraint firstItem="oi1-OK-MlT" firstAttribute="centerY" secondItem="OUd-ta-ZyF" secondAttribute="centerY" id="6jO-5h-RbO"/>
+                            <constraint firstItem="oi1-OK-MlT" firstAttribute="centerX" secondItem="OUd-ta-ZyF" secondAttribute="centerX" id="7L1-mA-Jc7"/>
                             <constraint firstItem="lNP-ra-E3Z" firstAttribute="top" secondItem="fGL-uA-jr4" secondAttribute="top" constant="20" id="EOT-cT-dlS"/>
                             <constraint firstItem="din-YF-sBl" firstAttribute="leading" secondItem="fGL-uA-jr4" secondAttribute="leading" constant="20" id="LpH-7z-G3B"/>
                             <constraint firstItem="din-YF-sBl" firstAttribute="top" secondItem="lNP-ra-E3Z" secondAttribute="bottom" constant="20" id="MIi-75-tM8"/>
@@ -981,18 +990,19 @@
                             <constraint firstItem="fGL-uA-jr4" firstAttribute="trailing" secondItem="OUd-ta-ZyF" secondAttribute="trailing" constant="20" id="Ro8-hJ-ECa"/>
                             <constraint firstItem="lNP-ra-E3Z" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="StY-io-L7n"/>
                             <constraint firstItem="Rxj-eU-h7c" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="WCv-Qd-Wye"/>
+                            <constraint firstItem="Ook-JP-X2o" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="WId-OV-BYC"/>
                             <constraint firstItem="OUd-ta-ZyF" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="WhQ-W6-8C3"/>
                             <constraint firstItem="OUd-ta-ZyF" firstAttribute="leading" secondItem="fGL-uA-jr4" secondAttribute="leading" constant="20" id="ZqH-Ra-VHu"/>
-                            <constraint firstItem="eZM-iM-NYe" firstAttribute="top" secondItem="Rxj-eU-h7c" secondAttribute="bottom" constant="40" id="e6v-aS-lar"/>
+                            <constraint firstItem="oi1-OK-MlT" firstAttribute="top" secondItem="din-YF-sBl" secondAttribute="bottom" constant="9" id="amO-xB-1JV"/>
                             <constraint firstItem="Rxj-eU-h7c" firstAttribute="leading" secondItem="fGL-uA-jr4" secondAttribute="leading" constant="20" id="eMZ-Qh-s3M"/>
-                            <constraint firstItem="eZM-iM-NYe" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="gXT-f8-qMI"/>
                             <constraint firstItem="y2z-Q0-F78" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="jfl-OV-UkY"/>
                             <constraint firstItem="OUd-ta-ZyF" firstAttribute="top" secondItem="din-YF-sBl" secondAttribute="bottom" constant="20" id="m5c-h6-APp"/>
                             <constraint firstItem="fGL-uA-jr4" firstAttribute="trailing" secondItem="Rxj-eU-h7c" secondAttribute="trailing" constant="20" id="s9Z-oa-peY"/>
                             <constraint firstItem="din-YF-sBl" firstAttribute="centerX" secondItem="Zzn-pv-L5r" secondAttribute="centerX" id="u8m-2u-qdD"/>
-                            <constraint firstItem="eZM-iM-NYe" firstAttribute="leading" secondItem="fGL-uA-jr4" secondAttribute="leading" constant="20" id="wug-05-o9I"/>
+                            <constraint firstItem="Ook-JP-X2o" firstAttribute="top" secondItem="Rxj-eU-h7c" secondAttribute="bottom" constant="30" id="umf-SE-5wQ"/>
+                            <constraint firstItem="fGL-uA-jr4" firstAttribute="trailing" secondItem="Ook-JP-X2o" secondAttribute="trailing" constant="20" id="y5m-qb-nMB"/>
                             <constraint firstItem="y2z-Q0-F78" firstAttribute="centerY" secondItem="Zzn-pv-L5r" secondAttribute="centerY" id="yWq-Da-ydJ"/>
-                            <constraint firstItem="fGL-uA-jr4" firstAttribute="trailing" secondItem="eZM-iM-NYe" secondAttribute="trailing" constant="20" id="ztl-wn-7d4"/>
+                            <constraint firstItem="oi1-OK-MlT" firstAttribute="leading" secondItem="fGL-uA-jr4" secondAttribute="leading" constant="72" id="ynZ-eM-2YK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View Admin Profile" id="WJR-cV-8Ws"/>
@@ -1000,6 +1010,7 @@
                         <outlet property="admin_email" destination="OUd-ta-ZyF" id="5TA-hn-sV3"/>
                         <outlet property="admin_mobile" destination="Rxj-eU-h7c" id="hzD-D8-3bA"/>
                         <outlet property="admin_name" destination="din-YF-sBl" id="Heo-Z4-Wxg"/>
+                        <outlet property="delete_msglbl" destination="oi1-OK-MlT" id="7uQ-4R-G4Y"/>
                         <outlet property="spinner" destination="y2z-Q0-F78" id="sQo-B4-kDC"/>
                     </connections>
                 </viewController>

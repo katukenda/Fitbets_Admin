@@ -32,3 +32,9 @@ struct Datum: Codable {
         case deviceToken = "device_token"
     }
 }
+
+struct DeleteAdminModel: Codable {
+    let success: Bool
+    let code: Int
+    let status, message: String
+}
