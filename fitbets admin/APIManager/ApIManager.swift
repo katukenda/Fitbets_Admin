@@ -188,6 +188,7 @@ class APIManager{
             switch response.result{
             case .success(let data):
                 do{
+                    
                     let json = try JSONDecoder().decode(GetAllAdminResponseModel.self, from: data!)
                     if response.response?.statusCode == 200 {
                         completionHandler(.success(json))

@@ -7,7 +7,9 @@
 
 import Foundation
 
-
+struct Photo: Decodable {
+    let title: String
+}
 struct GetAllAdminResponseModel: Codable {
     let success: Bool
     let code: Int
