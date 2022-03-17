@@ -1,16 +1,16 @@
 //
-//  AdminTableViewCell.swift
+//  UserTableViewCell.swift
 //  fitbets admin
 //
-//  Created by Janitha Katukenda on 2022-03-16.
+//  Created by Janitha Katukenda on 2022-03-17.
 //
 
 import UIKit
 
-class AdminTableViewCell: UITableViewCell {
+class UserTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var adminName: UILabel!
-    
+  
+    @IBOutlet weak var userName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +21,5 @@ class AdminTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
 
 }

@@ -1,45 +1,39 @@
 //
-//  AdminDetailsViewController.swift
+//  UserDetailsViewController.swift
 //  fitbets admin
 //
-//  Created by Janitha Katukenda on 2022-03-17.
+//  Created by Janitha Katukenda on 2022-03-18.
 //
 
 import UIKit
 
-class AdminProfileViewController: UIViewController {
+class UserDetailsViewController:UIViewController {
     
-    var selected_A_ID = ""
-    
-    
-    @IBOutlet weak var admin_name: UILabel!
-    @IBOutlet weak var admin_email: UILabel!
-    @IBOutlet weak var admin_mobile: UILabel!
-    
-    @IBOutlet weak var delete_msglbl: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var userProfileImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.getAdminDetail()
-        
+
+        self.getUserDetail()
     }
-    
-    private  func getAdminDetail(){
+    private  func getUserDetail(){
         spinner.startAnimating()
-        APIManager.shareInstance.callgetAdminById{
+        APIManager.shareInstance.callgetuserById{
             (result) in
             switch result{
             case .success(let json):
-                let jsonDataAdmin = (json as! GetAdminProfileDataResponseModel).data
-                self.admin_name.text = jsonDataAdmin[0].adminName
-                self.admin_email.text = jsonDataAdmin[0].emailAddress
-                self.admin_mobile.text = jsonDataAdmin[0].mobileNumber
+                let jsonDataUser = (json as! GetUserDetailsModel).data
+                self.userName.text = jsonDataUser[0].userName
+                self.userEmail.text = jsonDataUser[0].userEmail
+//
                 
                 self.spinner.stopAnimating()
             case .failure(let err):
                 self.spinner.stopAnimating()
-                // create the alert
+                 //create the alert
                 self.navigationController?.popViewController(animated: true)
                 self.dismiss(animated: true, completion: nil)
                 let alert = UIAlertController(title: "Fitbets Profile Update", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
@@ -53,13 +47,10 @@ class AdminProfileViewController: UIViewController {
     }
     
     
-    @IBAction func deleteAdminButton(_ sender: Any) {
-        let id_new  = Int(TokenService.tokenInstance.getId())
-        let id_admin = Int(selected_A_ID)
-        
-        if id_new != id_admin
-        {
-            let alertController = UIAlertController(title: "Delete Alert!", message: "Are you sure to delete this admin", preferredStyle: .alert)
+    
+    @IBAction func userDeleteTapped(_ sender: Any) {
+       
+            let alertController = UIAlertController(title: "Delete Alert!", message: "Are you sure to delete this user", preferredStyle: .alert)
             
             let cancelAction = UIAlertAction(title: "No", style: .cancel) { (action) in
                 
@@ -67,7 +58,7 @@ class AdminProfileViewController: UIViewController {
             alertController.addAction(cancelAction)
             
             let OKAction = UIAlertAction(title: "Yes", style: .default) { (action) in
-                self.deleteAdmin()
+                self.deleteUser()
             }
             alertController.addAction(OKAction)
             self.present(alertController, animated: true) {
@@ -75,35 +66,30 @@ class AdminProfileViewController: UIViewController {
             }
             
             
-        }
-        else {
-            let alert = UIAlertController(title: "Fitbets Profile Update", message: "You Cant delete Your self heare ", preferredStyle: UIAlertController.Style.alert)
-        }
     }
     
     
-    public func deleteAdmin() {
+    
+    private func deleteUser() {
         spinner.startAnimating()
-        APIManager.shareInstance.callDeleteAdminById{
+        APIManager.shareInstance.callDeleteUserById{
             (result) in
             switch result{
             case .success(let json):
-                let jsonData = (json as! DeleteAdminModel)
-                let alert = UIAlertController(title: "Admin Deleted", message: (jsonData.message), preferredStyle: UIAlertController.Style.alert)
+                let jsonData = (json as! DeleteUserModel)
+                let alert = UIAlertController(title: "User Deleted", message: (jsonData.message), preferredStyle: UIAlertController.Style.alert)
                 // add an action (button)
                 self.present(alert, animated: true, completion: nil)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.spinner.stopAnimating()
-                self.admin_name.text = ""
-                self.admin_email.text = ""
-                self.admin_mobile.text = ""
-                self.delete_msglbl.text = "Acount Deleted !"
-                self.delete_msglbl.isUserInteractionEnabled = true
+                self.userName.text = ""
+                self.userEmail.text = ""
+              
                  
             case .failure(let err):
                 self.spinner.stopAnimating()
                 // create the alert
-                let alert = UIAlertController(title: "Fitbets Admin Delete", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Fitbets User Delete", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
@@ -111,7 +97,6 @@ class AdminProfileViewController: UIViewController {
             }
         }
     }
+    
+
 }
-
-
-

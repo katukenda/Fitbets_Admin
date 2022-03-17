@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		06177D1627E2FCEC0007FEA3 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06177D1527E2FCEC0007FEA3 /* AdminProfileViewController.swift */; };
 		06177D1827E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06177D1727E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift */; };
+		06177D1A27E3AD290007FEA3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06177D1927E3AD290007FEA3 /* UserTableViewCell.swift */; };
+		061BC37027E3C26F00B62023 /* GetAllUserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BC36F27E3C26F00B62023 /* GetAllUserResponseModel.swift */; };
 		06342B3D27E24D8E00918F89 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06342B3C27E24D8E00918F89 /* AdminTableViewCell.swift */; };
 		064E178227DBAE3F00490430 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178127DBAE3F00490430 /* Constant.swift */; };
 		064E178527DBB11000490430 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178427DBB11000490430 /* RegisterModel.swift */; };
 		064E178827DBB2BF00490430 /* ApIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178727DBB2BF00490430 /* ApIManager.swift */; };
 		064E178E27DBC38E00490430 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E178D27DBC38E00490430 /* LoginModel.swift */; };
+		06521AB327E3D150004825A4 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06521AB227E3D150004825A4 /* UserDetailsViewController.swift */; };
 		066F349127DF1B900024C952 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349027DF1B900024C952 /* UIApplication + Extension.swift */; };
 		066F349427DF29A90024C952 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349327DF29A90024C952 /* HomeViewController.swift */; };
 		066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349C27DF99940024C952 /* ProfileViewController.swift */; };
@@ -37,11 +40,14 @@
 /* Begin PBXFileReference section */
 		06177D1527E2FCEC0007FEA3 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
 		06177D1727E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAdminProfileDataResponseModel.swift; sourceTree = "<group>"; };
+		06177D1927E3AD290007FEA3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		061BC36F27E3C26F00B62023 /* GetAllUserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllUserResponseModel.swift; sourceTree = "<group>"; };
 		06342B3C27E24D8E00918F89 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
 		064E178127DBAE3F00490430 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		064E178427DBB11000490430 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		064E178727DBB2BF00490430 /* ApIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApIManager.swift; sourceTree = "<group>"; };
 		064E178D27DBC38E00490430 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		06521AB227E3D150004825A4 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		066F349027DF1B900024C952 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		066F349327DF29A90024C952 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		066F349C27DF99940024C952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 				064E178D27DBC38E00490430 /* LoginModel.swift */,
 				06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */,
 				06177D1727E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift */,
+				061BC36F27E3C26F00B62023 /* GetAllUserResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				066F34A727DF9A2C0024C952 /* UsersViewController.swift */,
+				06177D1927E3AD290007FEA3 /* UserTableViewCell.swift */,
+				06521AB227E3D150004825A4 /* UserDetailsViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -374,16 +383,19 @@
 			files = (
 				068E2B5427DCAD4800FDCF09 /* RegisterViewController.swift in Sources */,
 				064E178527DBB11000490430 /* RegisterModel.swift in Sources */,
+				06177D1A27E3AD290007FEA3 /* UserTableViewCell.swift in Sources */,
 				066F34A627DF9A1F0024C952 /* CategoryViewController.swift in Sources */,
 				067E97C427E032E600D37F95 /* EditProfieViewController.swift in Sources */,
 				066F34AB27DF9C240024C952 /* SettingViewController.swift in Sources */,
 				064E178E27DBC38E00490430 /* LoginModel.swift in Sources */,
 				06177D1627E2FCEC0007FEA3 /* AdminProfileViewController.swift in Sources */,
+				061BC37027E3C26F00B62023 /* GetAllUserResponseModel.swift in Sources */,
 				066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
 				066F34A827DF9A2C0024C952 /* UsersViewController.swift in Sources */,
 				066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */,
+				06521AB327E3D150004825A4 /* UserDetailsViewController.swift in Sources */,
 				066F349127DF1B900024C952 /* UIApplication + Extension.swift in Sources */,
 				066F349F27DF99B60024C952 /* AdminViewController.swift in Sources */,
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,

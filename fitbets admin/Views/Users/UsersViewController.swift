@@ -8,24 +8,79 @@
 import UIKit
 
 class UsersViewController: UIViewController {
-
+    private var jsonDataUser: [GAUList] = []
+    
+    @IBOutlet weak var userTableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        userTableView.delegate = self
+        userTableView.dataSource = self
+        
+        self.userTableView.reloadData()
+        self.getAllAdmin()
+        
     }
     
-    @IBAction func test(_ sender: Any) {
+    
+    private  func getAllAdmin(){
+        spinner.startAnimating()
+        APIManager.shareInstance.callgetAllUsers{
+            (result) in
+            switch result{
+            case .success(let json):
+                self.jsonDataUser = (json as! GetAllUserRequestModel).data
+                self.userTableView.reloadData()
+                self.spinner.stopAnimating()
+            case .failure(let err):
+                self.spinner.stopAnimating()
+                // create the alert
+                let alert = UIAlertController(title: "Fitbets User List", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                print(err.localizedDescription)
+            }
+        }
     }
     
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.jsonDataUser.count
+        
+        //self.jsonDataAdmin.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selected_user_id = self.jsonDataUser[indexPath.row].id
+        TokenService.tokenInstance.saveAdminId(id: selected_user_id)
+        
+        let viewUserProfileVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UserDetailsViewController") as? UserDetailsViewController
+        self.navigationController?.pushViewController(viewUserProfileVC!, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserTableViewCell {
+            cell.userName.text = self.jsonDataUser[indexPath.row].userName
+            return cell
+        }
+        return UITableViewCell()
+    }
 }

@@ -82,8 +82,8 @@ extension AdminViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       if let cell = tableView.dequeueReusableCell(withIdentifier: "AdminCell", for: indexPath) as? AdminTableViewCell {
-           cell.admin_name.text = self.jsonDataAdmin[indexPath.row].adminName
+       if let cell = tableView.dequeueReusableCell(withIdentifier: "adminCell", for: indexPath) as? AdminTableViewCell {
+           cell.adminName.text = self.jsonDataAdmin[indexPath.row].adminName
            return cell
         }
         return UITableViewCell()
