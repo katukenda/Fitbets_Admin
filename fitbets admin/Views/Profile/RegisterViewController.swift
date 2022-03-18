@@ -81,42 +81,21 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
         {
             
             (isSuccess, str) in
-            if isSuccess {
+            if isSuccess == false {
+                
+                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
                 self.spinner.stopAnimating()
-                let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
-                
-                let cancelAction = UIAlertAction(title: "Add another", style: .cancel) { (action) in
-                    // ...
-                }
-                alertController.addAction(cancelAction)
-                
-                let OKAction = UIAlertAction(title: "Login", style: .default) { (action) in
-                    self.navigationController?.popViewController(animated: true)
-                    self.dismiss(animated: true, completion: nil)
-                }
-                alertController.addAction(OKAction)
-                self.present(alertController, animated: true) {
-                    // ...
-                }
             }
             else {
                 self.spinner.stopAnimating()
-                let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
-                
-                let cancelAction = UIAlertAction(title: "Try Again", style: .cancel) { (action) in
+                let alert = UIAlertController(title: "Fitbets Admin Register", message:  str, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
                     // ...
                 }
-                alertController.addAction(cancelAction)
-                
-                let OKAction = UIAlertAction(title: "Login", style: .default) { (action) in
-                    self.navigationController?.popViewController(animated: true)
-                    self.dismiss(animated: true, completion: nil)
-                }
-                alertController.addAction(OKAction)
-                self.present(alertController, animated: true) {
-                    // ...
-                }
-            }
+            
         }
     }
     

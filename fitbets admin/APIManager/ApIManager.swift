@@ -87,6 +87,7 @@ class APIManager{
         }
     }
     
+    
     func callingLogOutAPI(vc: UIViewController){
         let headers: HTTPHeaders = [
             "user_token": "\(TokenService.tokenInstance.getToken)"

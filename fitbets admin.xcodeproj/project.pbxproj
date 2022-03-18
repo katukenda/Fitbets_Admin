@@ -22,7 +22,6 @@
 		066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349C27DF99940024C952 /* ProfileViewController.swift */; };
 		066F349F27DF99B60024C952 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F349E27DF99B60024C952 /* AdminViewController.swift */; };
 		066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34A327DF9A110024C952 /* ChalengesViewController.swift */; };
-		066F34A627DF9A1F0024C952 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34A527DF9A1F0024C952 /* CategoryViewController.swift */; };
 		066F34A827DF9A2C0024C952 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34A727DF9A2C0024C952 /* UsersViewController.swift */; };
 		066F34AB27DF9C240024C952 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F34AA27DF9C240024C952 /* SettingViewController.swift */; };
 		067E97C427E032E600D37F95 /* EditProfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E97C327E032E600D37F95 /* EditProfieViewController.swift */; };
@@ -34,6 +33,8 @@
 		06AB765227DA42E40000B967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB765027DA42E40000B967 /* LaunchScreen.storyboard */; };
 		06CF318127DE01900088FBCF /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF318027DE018F0088FBCF /* TokenService.swift */; };
 		06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */; };
+		06FD572627E48C660029D157 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572527E48C660029D157 /* CategoryViewController.swift */; };
+		06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572827E48E240029D157 /* ObjectivesViewController.swift */; };
 		C9640B1C4928B62FA9670EFB /* Pods_fitbets_admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +54,6 @@
 		066F349C27DF99940024C952 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		066F349E27DF99B60024C952 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		066F34A327DF9A110024C952 /* ChalengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChalengesViewController.swift; sourceTree = "<group>"; };
-		066F34A527DF9A1F0024C952 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		066F34A727DF9A2C0024C952 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		066F34AA27DF9C240024C952 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		067E97C327E032E600D37F95 /* EditProfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfieViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		06AB765327DA42E40000B967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06CF318027DE018F0088FBCF /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDetailsModel.swift; sourceTree = "<group>"; };
+		06FD572527E48C660029D157 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		06FD572827E48E240029D157 /* ObjectivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesViewController.swift; sourceTree = "<group>"; };
 		3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fitbets_admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EADA28B6AA7CB5C5997AAFA /* Pods-fitbets admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.debug.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.debug.xcconfig"; sourceTree = "<group>"; };
 		A3BE86B1B8BD4EE0C57242F3 /* Pods-fitbets admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.release.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 				067E97C227E032AE00D37F95 /* Admins */,
 				066F34A927DF9C110024C952 /* Setting */,
 				066F34A227DF99E60024C952 /* Challenges */,
-				066F34A127DF99D40024C952 /* Category */,
 				066F34A027DF99BF0024C952 /* Users */,
 				066F349227DF299A0024C952 /* Home */,
 				064E178A27DBB8C300490430 /* Profile */,
@@ -178,14 +179,6 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
-		066F34A127DF99D40024C952 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				066F34A527DF9A1F0024C952 /* CategoryViewController.swift */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 		066F34A227DF99E60024C952 /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +190,8 @@
 		066F34A927DF9C110024C952 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				06FD572727E48DF00029D157 /* Objectives */,
+				06FD572427E48C4B0029D157 /* Categories */,
 				066F34AA27DF9C240024C952 /* SettingViewController.swift */,
 			);
 			path = Setting;
@@ -247,6 +242,22 @@
 				06AB765327DA42E40000B967 /* Info.plist */,
 			);
 			path = "fitbets admin";
+			sourceTree = "<group>";
+		};
+		06FD572427E48C4B0029D157 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				06FD572527E48C660029D157 /* CategoryViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		06FD572727E48DF00029D157 /* Objectives */ = {
+			isa = PBXGroup;
+			children = (
+				06FD572827E48E240029D157 /* ObjectivesViewController.swift */,
+			);
+			path = Objectives;
 			sourceTree = "<group>";
 		};
 		175E9A37B94FD9C09B4F1419 /* Pods */ = {
@@ -384,12 +395,12 @@
 				068E2B5427DCAD4800FDCF09 /* RegisterViewController.swift in Sources */,
 				064E178527DBB11000490430 /* RegisterModel.swift in Sources */,
 				06177D1A27E3AD290007FEA3 /* UserTableViewCell.swift in Sources */,
-				066F34A627DF9A1F0024C952 /* CategoryViewController.swift in Sources */,
 				067E97C427E032E600D37F95 /* EditProfieViewController.swift in Sources */,
 				066F34AB27DF9C240024C952 /* SettingViewController.swift in Sources */,
 				064E178E27DBC38E00490430 /* LoginModel.swift in Sources */,
 				06177D1627E2FCEC0007FEA3 /* AdminProfileViewController.swift in Sources */,
 				061BC37027E3C26F00B62023 /* GetAllUserResponseModel.swift in Sources */,
+				06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */,
 				066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
@@ -401,6 +412,7 @@
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,
 				06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */,
 				06AB764627DA42E30000B967 /* AppDelegate.swift in Sources */,
+				06FD572627E48C660029D157 /* CategoryViewController.swift in Sources */,
 				06342B3D27E24D8E00918F89 /* AdminTableViewCell.swift in Sources */,
 				06177D1827E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,

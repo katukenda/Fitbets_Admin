@@ -15,3 +15,4 @@ struct RegisterModel: Encodable {
     let password: String
     let device_token: String
 }
+

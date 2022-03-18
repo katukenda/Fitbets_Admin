@@ -17,7 +17,20 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reloadView()
-
+        self.checkAlredyLogged()
+    }
+    
+    func checkAlredyLogged(){
+        if TokenService.tokenInstance.checkForLogin(){
+//            let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "admin") as? AdminViewController
+//            self.navigationController?.pushViewController(loginVC!, animated: true)
+            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+   }
+        else {
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+                            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func represhtapped(_ sender: Any) {
