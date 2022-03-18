@@ -9,7 +9,7 @@ import Foundation
 
 let app_id = ""
 let rest_key = ""
-let device_token = "aaaaaaa"
+let device_token = "12345678"
 
 //base url
 let base_url = "http://ec2-35-83-63-15.us-west-2.compute.amazonaws.com:8000/"

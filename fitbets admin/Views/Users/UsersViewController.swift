@@ -66,6 +66,51 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let selected_user_id = self.jsonDataUser[indexPath.row].id
+            TokenService.tokenInstance.saveAdminId(id: selected_user_id)
+           
+                tableView.beginUpdates()
+                jsonDataUser.remove(at: indexPath.row)
+                //start action
+                
+                    spinner.startAnimating()
+                    APIManager.shareInstance.callDeleteUserById{
+                        (result) in
+                        switch result{
+                        case .success(let json):
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                            tableView.endUpdates()
+                            let jsonData = (json as! DeleteUserModel)
+                            let alert = UIAlertController(title: "User Deleted", message: (jsonData.message), preferredStyle: UIAlertController.Style.alert)
+                            // add an action (button)
+                            self.present(alert, animated: true, completion: nil)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                            self.spinner.stopAnimating()
+                          
+                        case .failure(let err):
+                            self.spinner.stopAnimating()
+                            // create the alert
+                            let alert = UIAlertController(title: "Fitbets User Delete", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            
+                            print(err.localizedDescription)
+                        }
+                    }
+                
+        
+           
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selected_user_id = self.jsonDataUser[indexPath.row].id
