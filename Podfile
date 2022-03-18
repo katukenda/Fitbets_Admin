@@ -7,5 +7,6 @@ target 'fitbets admin' do
 
   # Pods for fitbets admin
 pod 'Alamofire', '~> 5.5'
+pod 'Kingfisher'
 
 end
