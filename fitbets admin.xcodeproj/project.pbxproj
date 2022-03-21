@@ -35,6 +35,7 @@
 		06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */; };
 		06FD572627E48C660029D157 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572527E48C660029D157 /* CategoryViewController.swift */; };
 		06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572827E48E240029D157 /* ObjectivesViewController.swift */; };
+		06FD572B27E5088B0029D157 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */; };
 		C9640B1C4928B62FA9670EFB /* Pods_fitbets_admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDetailsModel.swift; sourceTree = "<group>"; };
 		06FD572527E48C660029D157 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		06FD572827E48E240029D157 /* ObjectivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesViewController.swift; sourceTree = "<group>"; };
+		06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		3273DDA638B6FD5506637067 /* Pods_fitbets_admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fitbets_admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EADA28B6AA7CB5C5997AAFA /* Pods-fitbets admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.debug.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.debug.xcconfig"; sourceTree = "<group>"; };
 		A3BE86B1B8BD4EE0C57242F3 /* Pods-fitbets admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitbets admin.release.xcconfig"; path = "Target Support Files/Pods-fitbets admin/Pods-fitbets admin.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				06FD572527E48C660029D157 /* CategoryViewController.swift */,
+				06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */,
 				066F34A427DF9A110024C952 /* ChalengesViewController.swift in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
+				06FD572B27E5088B0029D157 /* CategoryTableViewCell.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
 				066F34A827DF9A2C0024C952 /* UsersViewController.swift in Sources */,
 				066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */,

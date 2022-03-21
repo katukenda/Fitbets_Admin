@@ -29,16 +29,24 @@ class APIManager{
                     
                     let json = try JSONSerialization.jsonObject(with: data!, options: [])
                     if response.response?.statusCode == 200 {
-                        if let dictionary = json as? [String: Any] {
-                            if let message = dictionary["message"] as? String {
-                                completionHandler(true,message)
-                            }
+                        let jsonS = try JSONDecoder().decode(RegisterResponseModel.self, from: data!)
+                        
+                        if (jsonS as! RegisterResponseModel).success {
+                            completionHandler(true,"Successfuly Registerd")
                         }
+                        else{
+                            
+                            let jsonF = try JSONDecoder().decode(RegisterFaliureResponseModel.self, from: data!)
+                            completionHandler(false,(jsonF as! RegisterFaliureResponseModel).message)
+                        }
+                       
                     }
+                    
+                    
                     else {
                         if let dictionary = json as? [String: Any] {
                             if let message = dictionary["message"] as? String {
-                                completionHandler(true,message)
+                                completionHandler(false,message)
                             }
                         }
                     }

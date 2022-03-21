@@ -25,10 +25,8 @@ class TokenService{
         userDefault.set(mobile, forKey: profileKey.userMobile)
         userDefault.set(id, forKey: profileKey.userId)
     }
-    
-    
+
     //get
-    
     func getToken() -> String{
         if let token = userDefault.object(forKey: TokenKey.userLogin) as? String {
             return token
@@ -89,8 +87,6 @@ class TokenService{
             return true
         }
     }
-
-    
     //remove
     func removeToken(){
         userDefault.removeObject(forKey: TokenKey.userLogin)

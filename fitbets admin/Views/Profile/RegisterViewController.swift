@@ -81,11 +81,25 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
         {
             
             (isSuccess, str) in
-            if isSuccess == false {
+            if isSuccess == true {
                 
-                self.navigationController?.popViewController(animated: true)
-                self.dismiss(animated: true, completion: nil)
+               
                 self.spinner.stopAnimating()
+                let alertController = UIAlertController(title: "Register Alert!", message: str, preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "New Register", style: .cancel) { (action) in
+                    
+                }
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "Login", style: .default) { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true) {
+                    // ...
+                }
             }
             else {
                 self.spinner.stopAnimating()

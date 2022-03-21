@@ -16,3 +16,15 @@ struct RegisterModel: Encodable {
     let device_token: String
 }
 
+struct RegisterResponseModel:Codable {
+    let success: Bool
+    let code: Int
+    let status: String
+}
+
+struct RegisterFaliureResponseModel:Codable {
+    let success: Bool
+    let code: Int
+    let status: String
+    let message: String
+}
