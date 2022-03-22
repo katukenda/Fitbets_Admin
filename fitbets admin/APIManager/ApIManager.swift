@@ -26,7 +26,6 @@ class APIManager{
             switch response.result{
             case .success(let data):
                 do{
-                    
                     let json = try JSONSerialization.jsonObject(with: data!, options: [])
                     if response.response?.statusCode == 200 {
                         let jsonS = try JSONDecoder().decode(RegisterResponseModel.self, from: data!)
@@ -35,14 +34,10 @@ class APIManager{
                             completionHandler(true,"Successfuly Registerd")
                         }
                         else{
-                            
                             let jsonF = try JSONDecoder().decode(RegisterFaliureResponseModel.self, from: data!)
                             completionHandler(false,(jsonF as! RegisterFaliureResponseModel).message)
                         }
-                       
                     }
-                    
-                    
                     else {
                         if let dictionary = json as? [String: Any] {
                             if let message = dictionary["message"] as? String {
@@ -50,21 +45,17 @@ class APIManager{
                             }
                         }
                     }
-                    
                 }
                 catch{
                     print(error.localizedDescription)
                     completionHandler(false,"Pleaese Try Again")
                 }
-                
             case .failure(let err):
                 print(err.localizedDescription)
                 completionHandler(false,"Pleaese Try Again")
-                
             }
         }
     }
-    
     
     func callLoginAPI(login: LoginModel, completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
@@ -79,7 +70,6 @@ class APIManager{
                     if response.response?.statusCode == 200 {
                         completionHandler(.success(json))
                     }
-                    
                     else {
                         completionHandler(.failure(.custom(message: "Please check the network connectivity")))
                     }
@@ -87,14 +77,11 @@ class APIManager{
                 catch{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
-                
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
     }
-    
     
     func callingLogOutAPI(vc: UIViewController){
         let headers: HTTPHeaders = [
@@ -133,70 +120,21 @@ class APIManager{
                 catch{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
-                
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
     }
     
-    
-    //    func callUpdateProfile(updateprofile: UpdateProfileModel, completionHandler: @escaping (Bool, String) -> ()){
-    //        let headers: HTTPHeaders = [
-    //            "Authorization": TokenService.tokenInstance.getToken()
-    //        ]
-    //        AF.request(updateProfile_url, method: .put, parameters: updateprofile, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
-    //            debugPrint(response)
-    //            switch response.result{
-    //            case .success(let data):
-    //                do{
-    //
-    //                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
-    //
-    //                    if response.response?.statusCode == 200 {
-    //
-    //                        if let dictionary = json as? [String: Any] {
-    //                            if let message = dictionary["message"] as? String {
-    //                                completionHandler(true,message)
-    //                            }
-    //
-    //                        }
-    //                    }
-    //                    else {
-    //                        if let dictionary = json as? [String: Any] {
-    //                            if let message = dictionary["message"] as? String {
-    //                                completionHandler(true,message)
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //                catch{
-    //                    print(error.localizedDescription)
-    //                    completionHandler(false,error.localizedDescription)
-    //                }
-    //
-    //            case .failure(let err):
-    //                print(err.localizedDescription)
-    //                completionHandler(false,err.localizedDescription)
-    //
-    //            }
-    //        }
-    //    }
-    //
-    
-    
     func callgetAllAdmin(completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
             "Authorization": TokenService.tokenInstance.getToken()
         ]
-        
         AF.request(getAllAdmin_url,method: .get, headers: headers).response{ response in
             debugPrint(response)
             switch response.result{
             case .success(let data):
                 do{
-                    
                     let json = try JSONDecoder().decode(GetAllAdminResponseModel.self, from: data!)
                     if response.response?.statusCode == 200 {
                         completionHandler(.success(json))
@@ -209,7 +147,6 @@ class APIManager{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
@@ -237,7 +174,6 @@ class APIManager{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
@@ -265,7 +201,6 @@ class APIManager{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
@@ -282,7 +217,6 @@ class APIManager{
             switch response.result{
             case .success(let data):
                 do{
-                    
                     let json = try JSONDecoder().decode(GetAllUserRequestModel.self, from: data!)
                     if response.response?.statusCode == 200 {
                         completionHandler(.success(json))
@@ -295,11 +229,11 @@ class APIManager{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
     }
+    
     func callgetuserById(completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
             "Authorization": TokenService.tokenInstance.getToken()
@@ -322,7 +256,6 @@ class APIManager{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
-                
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
@@ -350,7 +283,115 @@ class APIManager{
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
-                
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    func callgetAllCategory(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        AF.request(getAllCatagory_url,method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetCategoryResponsModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    func callgetSubCategoryById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_CategoryId = TokenService.tokenInstance.getCategoryId()
+        AF.request(getAllSubCategory_url + "\(selected_CategoryId)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetSubCategoryResponsModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    func callgetChallengeBySubCategoryId(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        
+        let selected_SubCategoryId = TokenService.tokenInstance.getSubCategoryId()
+        AF.request(getAllChallenges_url + "\(selected_SubCategoryId)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetAllChallengesResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    func callgetChaConditionBySubCategoryId(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_CategoryId = TokenService.tokenInstance.getCategoryId()
+        let selected_SubCategoryId = TokenService.tokenInstance.getSubCategoryId()
+        AF.request(getAllChallengCondition_url + "\(selected_CategoryId)/\(selected_SubCategoryId)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(ConditionResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
                 completionHandler(.failure(.custom(message: "Please try again")))
             }
         }

@@ -16,7 +16,6 @@ struct GetAllUserRequestModel: Codable {
     let message: String
 }
 
-// MARK: - Datum
 struct GAUList: Codable {
     let id: Int
     let userName, playCard :String
@@ -36,7 +35,6 @@ struct GetUserDetailsModel: Codable {
     let message: String
 }
 
-// MARK: - Datum
 struct DUDM: Codable {
     let id: Int
     let userName, userEmail, plyCarURL :String

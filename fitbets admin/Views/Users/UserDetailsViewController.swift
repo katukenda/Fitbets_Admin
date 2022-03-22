@@ -103,5 +103,10 @@ class UserDetailsViewController:UIViewController {
         }
     }
     
-
+    @IBAction func gotoIdols(_ sender: Any) {
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "IdolsViewController") as!
+        IdolsViewController
+        self.present(next, animated: true, completion: nil)
+    }
+    
 }
