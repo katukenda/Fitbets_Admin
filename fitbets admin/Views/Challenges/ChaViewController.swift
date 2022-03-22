@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  ChalengesViewController.swift
 //  fitbets admin
 //
 //  Created by Janitha Katukenda on 2022-03-14.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class ChaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,17 +18,20 @@ class TokenService{
     func saveAdminId(id: Int){
         userDefault.set(id, forKey: SelectedAdminKey.seletedAdminId)
     }
-    
     func saveProfileDeatails(name: String,email: String, mobile: String, id: Int){
         userDefault.set(name, forKey: profileKey.userName)
         userDefault.set(email, forKey: profileKey.userEmail)
         userDefault.set(mobile, forKey: profileKey.userMobile)
         userDefault.set(id, forKey: profileKey.userId)
     }
-    
-    
+    func saveCategoryId(id: Int){
+        userDefault.set(id, forKey: SelectedCategoryKey.seletedCategoryId)
+    }
+    func saveSubCategoryId(id: Int){
+        userDefault.set(id, forKey: SelectedSubCategoryKey.seletedSubCategoryId)
+    }
+
     //get
-    
     func getToken() -> String{
         if let token = userDefault.object(forKey: TokenKey.userLogin) as? String {
             return token
@@ -39,6 +42,22 @@ class TokenService{
     }
     func getAdminId() -> Int{
         if let id = userDefault.object(forKey: SelectedAdminKey.seletedAdminId) as? Int {
+            return id
+        }
+        else {
+            return -1
+        }
+    }
+    func getCategoryId() -> Int{
+        if let id = userDefault.object(forKey: SelectedCategoryKey.seletedCategoryId) as? Int {
+            return id
+        }
+        else {
+            return -1
+        }
+    }
+    func getSubCategoryId() -> Int{
+        if let id = userDefault.object(forKey: SelectedSubCategoryKey.seletedSubCategoryId) as? Int {
             return id
         }
         else {
@@ -89,8 +108,6 @@ class TokenService{
             return true
         }
     }
-
-    
     //remove
     func removeToken(){
         userDefault.removeObject(forKey: TokenKey.userLogin)
@@ -104,7 +121,12 @@ class TokenService{
         userDefault.removeObject(forKey: profileKey.userMobile)
         userDefault.removeObject(forKey: profileKey.userId)
     }
-    
+    func removeCategoryId(){
+        userDefault.removeObject(forKey: SelectedCategoryKey.seletedCategoryId)
+    }
+    func removeSubCategoryId(){
+        userDefault.removeObject(forKey: SelectedSubCategoryKey.seletedSubCategoryId)
+    }
 
     
 }

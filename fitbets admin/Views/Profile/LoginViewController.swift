@@ -18,19 +18,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.checkOlredyLogged()
-        
-    }
-    
-    func checkOlredyLogged(){
-        if TokenService.tokenInstance.checkForLogin(){
-//            let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "admin") as? AdminViewController
-//            self.navigationController?.pushViewController(loginVC!, animated: true)
-   }
-        else {
-             let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "login") as? LoginViewController
-            self.navigationController?.pushViewController(loginVC!, animated: true)
-        }
     }
     
     //dismiss keaboard when touch view
@@ -78,13 +65,10 @@ class LoginViewController: UIViewController {
                 let admin_id = (json as! LoginResponseModel).sub.id
                 let userToken = (json as! LoginResponseModel).token
                 TokenService.tokenInstance.saveToken(token: userToken)
-                
                 TokenService.tokenInstance.saveProfileDeatails(name: adminName, email: email_address, mobile: mobile_number, id: admin_id)
                 //go to dashboard
                 self.spinner.stopAnimating()
-                let loginVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "home") as? HomeViewController
-                loginVC?.strName = adminName
-                self.navigationController?.pushViewController(loginVC!, animated: true)
+                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
             case .failure(let err):
                 self.spinner.stopAnimating()
                 // create the alert
@@ -103,8 +87,9 @@ class LoginViewController: UIViewController {
     //go to register page
     @IBAction func goToRegisterView(_ sender: Any) {
         
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "register") as? RegisterViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "register") as! RegisterViewController
+                self.present(newViewController, animated: true, completion: nil)
     }
     
     

@@ -7,9 +7,7 @@
 
 import Foundation
 
-//struct Photo: Decodable {
-//    let title: String
-//}
+
 struct GetAllAdminResponseModel: Codable {
     let success: Bool
     let code: Int
@@ -17,7 +15,7 @@ struct GetAllAdminResponseModel: Codable {
     let data: [Datum]
     let message: String
 }
-// MARK: - Datum
+
 struct Datum: Codable {
     let id: Int
     let adminName, emailAddress, mobileNumber, hash: String
@@ -32,7 +30,6 @@ struct Datum: Codable {
         case deviceToken = "device_token"
     }
 }
-
 struct DeleteAdminModel: Codable {
     let success: Bool
     let code: Int

@@ -15,6 +15,7 @@ let device_token = "12345678"
 let base_url = "http://ec2-35-83-63-15.us-west-2.compute.amazonaws.com:8000/"
 let admin_root = "adminnew"
 let user_root = "user"
+let admin_old_root = "admin"
 //endpoints admin
 let login_url = "\(base_url + admin_root)/login"
 let register_url = "\(base_url + admin_root)/register"
@@ -24,6 +25,11 @@ let getAllAdmin_url = "\(base_url + admin_root)/getAllAdmin"
 let getAdminById_url = "\(base_url + admin_root)/getAdmin/"
 let deleteAdminById_url = "\(base_url + admin_root)/deleteAdmin/"
 let deleteUserById_url = "\(base_url + admin_root)/deleteUser/"
+
+let getAllCatagory_url = "\(base_url + admin_old_root)/getAllCategories"
+let getAllSubCategory_url = "\(base_url + admin_old_root)/getAllSubCategories/"
+let getAllChallenges_url = "\(base_url + admin_old_root)/getAllChallengesbySub/"
+let getAllChallengCondition_url = "\(base_url + admin_old_root)/getAllChallengeConditionsDetails/"
 
 //endpoints user
 let getAllUser_url = "\(base_url + user_root)/get-all-users"
@@ -44,4 +50,11 @@ struct profileKey{
 struct SelectedAdminKey{
     static let seletedAdminId = "SELECTED_ADMIN_ID"
 }
+struct SelectedCategoryKey{
+    static let seletedCategoryId = "SELECTED_CATEGORY_ID"
+}
+struct SelectedSubCategoryKey{
+    static let seletedSubCategoryId = "SELECTED_SUB_CATEGORY_ID"
+}
+
 

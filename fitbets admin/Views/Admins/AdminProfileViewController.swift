@@ -16,6 +16,7 @@ class AdminProfileViewController: UIViewController {
     @IBOutlet weak var admin_email: UILabel!
     @IBOutlet weak var admin_mobile: UILabel!
     
+    @IBOutlet weak var profileCard: UIImageView!
     @IBOutlet weak var delete_msglbl: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {

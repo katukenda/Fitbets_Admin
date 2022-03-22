@@ -1,18 +1,23 @@
 //
-//  ChalengesViewController.swift
+//  IdolsViewController.swift
 //  fitbets admin
 //
-//  Created by Janitha Katukenda on 2022-03-14.
+//  Created by Janitha Katukenda on 2022-03-22.
 //
 
 import UIKit
 
-class ChalengesViewController: UIViewController {
+class IdolsViewController: UIViewController {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        self.tableView.reloadData()
     }
     
 

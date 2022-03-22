@@ -1,18 +1,15 @@
 //
-//  UserTableViewCell.swift
+//  ConditionTableViewCell.swift
 //  fitbets admin
 //
-//  Created by Janitha Katukenda on 2022-03-17.
+//  Created by Janitha Katukenda on 2022-03-22.
 //
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class ConditionTableViewCell: UITableViewCell {
 
-  
-    @IBOutlet weak var userName: UILabel!
-    
- 
+    @IBOutlet weak var challenge_name: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,7 +17,6 @@ class UserTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

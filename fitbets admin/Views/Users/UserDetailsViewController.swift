@@ -14,6 +14,7 @@ class UserDetailsViewController:UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var userProfileImage: UIImageView!
     
+    @IBOutlet weak var profileCard: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +30,10 @@ class UserDetailsViewController:UIViewController {
                 self.userName.text = jsonDataUser[0].userName
                 self.userEmail.text = jsonDataUser[0].userEmail
 //
+                let url = URL(string: jsonDataUser[0].plyCarURL)
+                let data = try? Data(contentsOf: url!)
+                              //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                              self.profileCard.image = UIImage(data: data!)
                 
                 self.spinner.stopAnimating()
             case .failure(let err):
@@ -98,5 +103,10 @@ class UserDetailsViewController:UIViewController {
         }
     }
     
-
+    @IBAction func gotoIdols(_ sender: Any) {
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "IdolsViewController") as!
+        IdolsViewController
+        self.present(next, animated: true, completion: nil)
+    }
+    
 }

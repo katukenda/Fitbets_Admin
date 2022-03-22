@@ -16,7 +16,6 @@ struct GetAdminProfileDataResponseModel: Codable {
     let message: String
 }
 
-// MARK: - Datum
 struct GADBId: Codable {
     let id: Int
     let adminName, emailAddress, mobileNumber, hash: String

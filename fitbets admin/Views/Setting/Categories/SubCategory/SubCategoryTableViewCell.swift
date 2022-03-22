@@ -1,18 +1,17 @@
 //
-//  UserTableViewCell.swift
+//  SubCategoryTableViewCell.swift
 //  fitbets admin
 //
-//  Created by Janitha Katukenda on 2022-03-17.
+//  Created by Janitha Katukenda on 2022-03-21.
 //
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
-
-  
-    @IBOutlet weak var userName: UILabel!
+class SubCategoryTableViewCell: UITableViewCell {
+   
+   
     
- 
+    @IBOutlet weak var suCategory_name: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
    }
         else {
-            vc = HomeViewController()
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                   let login = mainStoryboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-                   self.window?.rootViewController = login
+//            vc = HomeViewController()
+//            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                   let login = mainStoryboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+//                   self.window?.rootViewController = login
         }
         
         //let navVC = UINavigationController(rootViewController: vc!)
