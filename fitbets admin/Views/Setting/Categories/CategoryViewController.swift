@@ -73,6 +73,47 @@ class CategoryViewController: UIViewController {
             self.navigationController?.pushViewController(viewSubCatVC!, animated: true)
         }
         
+        func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+
+            return .delete
+        }
+
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+
+                let selected_Cat_id = self.jsonDataAllCategory[indexPath.row].id
+                TokenService.tokenInstance.saveCategoryId(id: selected_Cat_id)
+
+                    tableView.beginUpdates()
+                jsonDataAllCategory.remove(at: indexPath.row)
+                    //start action
+
+                        spinner.startAnimating()
+                        APIManager.shareInstance.callDeleteCategoryById{
+                            (result) in
+                            switch result{
+                            case .success(let json):
+                                tableView.deleteRows(at: [indexPath], with: .fade)
+                                tableView.endUpdates()
+                                let jsonData = (json as! DeleteResponseModel)
+                                let alert = UIAlertController(title: "Category Deleted", message: (jsonData.message), preferredStyle: UIAlertController.Style.alert)
+                                // add an action (button)
+                                self.present(alert, animated: true, completion: nil)
+                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                                self.spinner.stopAnimating()
+
+                            case .failure(let err):
+                                self.spinner.stopAnimating()
+                                // create the alert
+                                let alert = UIAlertController(title: "Category Deleted", message:  err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+
+                                print(err.localizedDescription)
+                            }
+                        }
+            }
+        }
       
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
