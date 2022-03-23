@@ -504,7 +504,140 @@ class APIManager{
             }
         }
     }
+    
+    func callGetAllObjective(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+       
+        AF.request(getAllObjectives_url,method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetAllObjectiveResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    func callDeleteObjectivesById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_Common_Id = TokenService.tokenInstance.getCommonId()
+        AF.request(deleteObjectiveById_url + "\(selected_Common_Id)",method: .delete, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(DeleteResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    func callGetObjectiveById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_Common_Id = TokenService.tokenInstance.getCommonId()
+        AF.request(getObjectiveDetails_url + "\(selected_Common_Id)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(ObjectDetailsResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
 
+    func callUpdateObjective(updateObjective: ObjectRequestModel, completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let id = TokenService.tokenInstance.getCommonId()
+        AF.request(updateObjectById_url + "\(id)", method: .put, parameters: updateObjective, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(ObjectUpdateResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    func callCreateObjective(createObjective: ObjectRequestModel, completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+       
+        AF.request(createObject_url , method: .post, parameters: createObjective, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(ObjectUpdateResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
     
 }
 

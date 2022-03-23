@@ -17,6 +17,7 @@ let admin_root = "adminnew"
 let user_root = "user"
 let admin_old_root = "admin"
 let idols_root = "idols"
+let objective_root = "objective"
 //endpoints admin
 let login_url = "\(base_url + admin_root)/login"
 let register_url = "\(base_url + admin_root)/register"
@@ -35,6 +36,11 @@ let getAllChallengCondition_url = "\(base_url + admin_old_root)/getAllChallengeC
 let getAllSubCategory_url = "\(base_url + admin_old_root)/getAllSubCategories"
 let deleteCategoryById_url = "\(base_url + admin_old_root)/deleteCategories/"
 let deleteSubCategoryById_url = "\(base_url + admin_old_root)/deleteSubCategories/"
+let getAllObjectives_url = "\(base_url + objective_root)/getAllObjectives"
+let deleteObjectiveById_url = "\(base_url + objective_root)/delete/"
+let getObjectiveDetails_url = "\(base_url + objective_root)/getObjective/"
+let updateObjectById_url = "\(base_url + objective_root)/update/"
+let createObject_url = "\(base_url + objective_root)/create"
 
 //endpoints user
 let getAllUser_url = "\(base_url + user_root)/get-all-users"
@@ -62,5 +68,7 @@ struct SelectedCategoryKey{
 struct SelectedSubCategoryKey{
     static let seletedSubCategoryId = "SELECTED_SUB_CATEGORY_ID"
 }
-
+struct SelectedCommonKey{
+    static let seletedCommonId = "SELECTED_COMMON_ID"
+}
 

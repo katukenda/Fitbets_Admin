@@ -48,6 +48,10 @@
 		06F31C1527EA4B700010798B /* AllSubCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1427EA4B700010798B /* AllSubCategoryTableViewCell.swift */; };
 		06F31C1727EA4B8F0010798B /* AllSubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1627EA4B8F0010798B /* AllSubCategoryViewController.swift */; };
 		06F31C1927EAD1120010798B /* DeleteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1827EAD1120010798B /* DeleteModels.swift */; };
+		06F31C1B27EB371C0010798B /* ObjectiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1A27EB371C0010798B /* ObjectiveTableViewCell.swift */; };
+		06F31C1D27EB56490010798B /* ObjectiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1C27EB56490010798B /* ObjectiveModel.swift */; };
+		06F31C2127EB76060010798B /* ObjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C2027EB76060010798B /* ObjectDetailsViewController.swift */; };
+		06F31C2327EB8DE80010798B /* CreateObjectiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C2227EB8DE80010798B /* CreateObjectiveViewController.swift */; };
 		06FD572627E48C660029D157 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572527E48C660029D157 /* CategoryViewController.swift */; };
 		06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572827E48E240029D157 /* ObjectivesViewController.swift */; };
 		06FD572B27E5088B0029D157 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */; };
@@ -98,6 +102,10 @@
 		06F31C1427EA4B700010798B /* AllSubCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		06F31C1627EA4B8F0010798B /* AllSubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubCategoryViewController.swift; sourceTree = "<group>"; };
 		06F31C1827EAD1120010798B /* DeleteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModels.swift; sourceTree = "<group>"; };
+		06F31C1A27EB371C0010798B /* ObjectiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveTableViewCell.swift; sourceTree = "<group>"; };
+		06F31C1C27EB56490010798B /* ObjectiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveModel.swift; sourceTree = "<group>"; };
+		06F31C2027EB76060010798B /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; };
+		06F31C2227EB8DE80010798B /* CreateObjectiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateObjectiveViewController.swift; sourceTree = "<group>"; };
 		06FD572527E48C660029D157 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		06FD572827E48E240029D157 /* ObjectivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesViewController.swift; sourceTree = "<group>"; };
 		06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				06F31C0627E98E3B0010798B /* ChallengeModel.swift */,
 				06F31C0D27E99F510010798B /* ConditionModel.swift */,
 				06F31C1827EAD1120010798B /* DeleteModels.swift */,
+				06F31C1C27EB56490010798B /* ObjectiveModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,7 +236,6 @@
 		066F34A927DF9C110024C952 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				06FD572727E48DF00029D157 /* Objectives */,
 				06FD572427E48C4B0029D157 /* Categories */,
 				066F34AA27DF9C240024C952 /* SettingViewController.swift */,
 			);
@@ -323,6 +331,7 @@
 		06FD572427E48C4B0029D157 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				06FD572727E48DF00029D157 /* Objectives */,
 				06F31C0827E998BC0010798B /* Challenge Conditions */,
 				06F31BFF27E984B80010798B /* Challenges */,
 				06F31BFE27E984930010798B /* SubCategory */,
@@ -336,6 +345,9 @@
 			isa = PBXGroup;
 			children = (
 				06FD572827E48E240029D157 /* ObjectivesViewController.swift */,
+				06F31C1A27EB371C0010798B /* ObjectiveTableViewCell.swift */,
+				06F31C2027EB76060010798B /* ObjectDetailsViewController.swift */,
+				06F31C2227EB8DE80010798B /* CreateObjectiveViewController.swift */,
 			);
 			path = Objectives;
 			sourceTree = "<group>";
@@ -487,6 +499,8 @@
 				06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */,
 				066F34A427DF9A110024C952 /* ChaViewController.swift in Sources */,
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
+				06F31C2327EB8DE80010798B /* CreateObjectiveViewController.swift in Sources */,
+				06F31C1B27EB371C0010798B /* ObjectiveTableViewCell.swift in Sources */,
 				06F31BF727E874780010798B /* SubCategoryTableViewCell.swift in Sources */,
 				06F31C0E27E99F510010798B /* ConditionModel.swift in Sources */,
 				06F31C1727EA4B8F0010798B /* AllSubCategoryViewController.swift in Sources */,
@@ -499,6 +513,7 @@
 				066F349D27DF99940024C952 /* ProfileViewController.swift in Sources */,
 				06521AB327E3D150004825A4 /* UserDetailsViewController.swift in Sources */,
 				066F349127DF1B900024C952 /* UIApplication + Extension.swift in Sources */,
+				06F31C2127EB76060010798B /* ObjectDetailsViewController.swift in Sources */,
 				066F349F27DF99B60024C952 /* AdminViewController.swift in Sources */,
 				064E178227DBAE3F00490430 /* Constant.swift in Sources */,
 				06F31BF527E870420010798B /* SubCategoryViewController.swift in Sources */,
@@ -512,6 +527,7 @@
 				06F31C1127E9C64D0010798B /* IdolsViewController.swift in Sources */,
 				06F31C1927EAD1120010798B /* DeleteModels.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,
+				06F31C1D27EB56490010798B /* ObjectiveModel.swift in Sources */,
 				066F349427DF29A90024C952 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
