@@ -35,4 +35,9 @@ class SettingViewController: UIViewController {
         self.navigationController?.pushViewController(ASC!, animated: true)
         
     }
+    @IBAction func gotoObjectiveTapped(_ sender: Any) {
+        let GTO = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ObjectivesViewController") as? ObjectivesViewController
+        self.navigationController?.pushViewController(GTO!, animated: true)
+        
+    }
 }

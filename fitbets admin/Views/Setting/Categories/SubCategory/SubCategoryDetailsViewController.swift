@@ -26,6 +26,13 @@ class SubCategoryDetailsViewController: UIViewController {
         ChallengeConditionViewController
         self.present(next, animated: true, completion: nil)
     }
+    
+    @IBAction func gotoObjective_tapped(_ sender: Any) {
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "CreateObjectiveViewController") as!
+        CreateObjectiveViewController
+        self.present(next, animated: true, completion: nil)
+    }
+    
     }
 
 

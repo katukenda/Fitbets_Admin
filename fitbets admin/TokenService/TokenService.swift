@@ -30,6 +30,9 @@ class TokenService{
     func saveSubCategoryId(id: Int){
         userDefault.set(id, forKey: SelectedSubCategoryKey.seletedSubCategoryId)
     }
+    func saveCommonId(id: Int){
+        userDefault.set(id, forKey: SelectedCommonKey.seletedCommonId)
+    }
 
     //get
     func getToken() -> String{
@@ -58,6 +61,14 @@ class TokenService{
     }
     func getSubCategoryId() -> Int{
         if let id = userDefault.object(forKey: SelectedSubCategoryKey.seletedSubCategoryId) as? Int {
+            return id
+        }
+        else {
+            return -1
+        }
+    }
+    func getCommonId() -> Int{
+        if let id = userDefault.object(forKey: SelectedCommonKey.seletedCommonId) as? Int {
             return id
         }
         else {
@@ -126,6 +137,9 @@ class TokenService{
     }
     func removeSubCategoryId(){
         userDefault.removeObject(forKey: SelectedSubCategoryKey.seletedSubCategoryId)
+    }
+    func removeCommonId(){
+        userDefault.removeObject(forKey: SelectedCommonKey.seletedCommonId)
     }
 
     
