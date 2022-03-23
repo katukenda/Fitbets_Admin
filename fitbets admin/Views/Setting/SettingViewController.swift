@@ -30,9 +30,9 @@ class SettingViewController: UIViewController {
     }
     
     
-    @IBAction func gotoObjectivesTaped(_ sender: Any) {
-        let OVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ObjectivesViewController") as? ObjectivesViewController
-        self.navigationController?.pushViewController(OVC!, animated: true)
+    @IBAction func gotoSubCategoryTaped(_ sender: Any) {
+        let ASC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AllSubCategoryViewController") as? AllSubCategoryViewController
+        self.navigationController?.pushViewController(ASC!, animated: true)
         
     }
 }

@@ -179,34 +179,6 @@ class APIManager{
         }
     }
     
-    func callDeleteAdminById(completionHandler: @escaping Handler){
-        let headers: HTTPHeaders = [
-            "Authorization": TokenService.tokenInstance.getToken()
-        ]
-        let selected_adminId = TokenService.tokenInstance.getAdminId()
-        AF.request(deleteAdminById_url + "\(selected_adminId)",method: .delete, headers: headers).response{ response in
-            debugPrint(response)
-            switch response.result{
-            case .success(let data):
-                do{
-                    let json = try JSONDecoder().decode(DeleteAdminModel.self, from: data!)
-                    if response.response?.statusCode == 200 {
-                        completionHandler(.success(json))
-                    }
-                    else {
-                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
-                    }
-                }
-                catch{
-                    completionHandler(.failure(.custom(message: "Please try again")))
-                }
-            case .failure(let err):
-                completionHandler(.failure(.custom(message: "Please try again")))
-            }
-        }
-    }
-    
-    
     func callgetAllUsers(completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
             "Authorization": TokenService.tokenInstance.getToken()
@@ -261,33 +233,7 @@ class APIManager{
         }
     }
     
-    func callDeleteUserById(completionHandler: @escaping Handler){
-        let headers: HTTPHeaders = [
-            "Authorization": TokenService.tokenInstance.getToken()
-        ]
-        let selected_userId = TokenService.tokenInstance.getAdminId()
-        AF.request(deleteUserById_url + "\(selected_userId)",method: .delete, headers: headers).response{ response in
-            debugPrint(response)
-            switch response.result{
-            case .success(let data):
-                do{
-                    let json = try JSONDecoder().decode(DeleteUserModel.self, from: data!)
-                    if response.response?.statusCode == 200 {
-                        completionHandler(.success(json))
-                    }
-                    else {
-                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
-                    }
-                }
-                catch{
-                    completionHandler(.failure(.custom(message: "Please try again")))
-                }
-            case .failure(let err):
-                completionHandler(.failure(.custom(message: "Please try again")))
-            }
-        }
-    }
-    
+   
     func callgetAllCategory(completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
             "Authorization": TokenService.tokenInstance.getToken()
@@ -314,12 +260,39 @@ class APIManager{
         }
     }
     
+    func callgetAllSubCategory(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+       
+        AF.request(getAllSubCategory_url ,method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(AllSubCategoryResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
     func callgetSubCategoryById(completionHandler: @escaping Handler){
         let headers: HTTPHeaders = [
             "Authorization": TokenService.tokenInstance.getToken()
         ]
         let selected_CategoryId = TokenService.tokenInstance.getCategoryId()
-        AF.request(getAllSubCategory_url + "\(selected_CategoryId)",method: .get, headers: headers).response{ response in
+        AF.request(getAllSubCategoryById_url + "\(selected_CategoryId)",method: .get, headers: headers).response{ response in
             debugPrint(response)
             switch response.result{
             case .success(let data):
@@ -396,4 +369,142 @@ class APIManager{
             }
         }
     }
+    func callgetIdolsByUserId(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_UserId = TokenService.tokenInstance.getAdminId()
+      
+        AF.request(getIdolsByUserid_url + "\(selected_UserId)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetIdolsByIdModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    
+    //delete....................................................................................................
+    func callDeleteAdminById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_adminId = TokenService.tokenInstance.getAdminId()
+        AF.request(deleteAdminById_url + "\(selected_adminId)",method: .delete, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(DeleteAdminModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+
+    func callDeleteUserById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_userId = TokenService.tokenInstance.getAdminId()
+        AF.request(deleteUserById_url + "\(selected_userId)",method: .delete, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(DeleteUserModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+
+    func callDeleteSubCategoryById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_SubCatId = TokenService.tokenInstance.getSubCategoryId()
+        AF.request(deleteSubCategoryById_url + "\(selected_SubCatId)",method: .delete, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(DeleteResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    func callDeleteCategoryById(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_CatId = TokenService.tokenInstance.getCategoryId()
+        AF.request(deleteCategoryById_url + "\(selected_CatId)",method: .delete, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(DeleteResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+
+    
 }
+

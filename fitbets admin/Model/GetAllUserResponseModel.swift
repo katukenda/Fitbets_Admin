@@ -51,3 +51,24 @@ struct DeleteUserModel: Codable {
     let code: Int
     let status, message: String
 }
+
+
+struct GetIdolsByIdModel: Codable {
+    let status: Int
+    let data: [GIBUID]
+    let message: String
+}
+
+// MARK: - Datum
+struct GIBUID: Codable {
+    let username: String
+    let idolID, nationalityID: Int
+    let playerCardURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case username
+        case idolID = "idol_id"
+        case nationalityID = "nationality_id"
+        case playerCardURL = "player_card_url"
+    }
+}

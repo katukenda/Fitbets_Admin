@@ -1,5 +1,5 @@
 //
-//  IdolsTableViewCell.swift
+//  AllSubCategoryTableViewCell.swift
 //  fitbets admin
 //
 //  Created by Janitha Katukenda on 2022-03-22.
@@ -7,9 +7,11 @@
 
 import UIKit
 
-class IdolsTableViewCell: UITableViewCell {
+class AllSubCategoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var idol_name: UILabel!
+   
+    @IBOutlet weak var subcategory_name: UILabel!
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,4 +24,3 @@ class IdolsTableViewCell: UITableViewCell {
     }
 
 }
-

@@ -45,6 +45,9 @@
 		06F31C0E27E99F510010798B /* ConditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C0D27E99F510010798B /* ConditionModel.swift */; };
 		06F31C1127E9C64D0010798B /* IdolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1027E9C64D0010798B /* IdolsViewController.swift */; };
 		06F31C1327E9C6660010798B /* IdolsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1227E9C6660010798B /* IdolsTableViewCell.swift */; };
+		06F31C1527EA4B700010798B /* AllSubCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1427EA4B700010798B /* AllSubCategoryTableViewCell.swift */; };
+		06F31C1727EA4B8F0010798B /* AllSubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1627EA4B8F0010798B /* AllSubCategoryViewController.swift */; };
+		06F31C1927EAD1120010798B /* DeleteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31C1827EAD1120010798B /* DeleteModels.swift */; };
 		06FD572627E48C660029D157 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572527E48C660029D157 /* CategoryViewController.swift */; };
 		06FD572927E48E240029D157 /* ObjectivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572827E48E240029D157 /* ObjectivesViewController.swift */; };
 		06FD572B27E5088B0029D157 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */; };
@@ -92,6 +95,9 @@
 		06F31C0D27E99F510010798B /* ConditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionModel.swift; sourceTree = "<group>"; };
 		06F31C1027E9C64D0010798B /* IdolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdolsViewController.swift; sourceTree = "<group>"; };
 		06F31C1227E9C6660010798B /* IdolsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdolsTableViewCell.swift; sourceTree = "<group>"; };
+		06F31C1427EA4B700010798B /* AllSubCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		06F31C1627EA4B8F0010798B /* AllSubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubCategoryViewController.swift; sourceTree = "<group>"; };
+		06F31C1827EAD1120010798B /* DeleteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModels.swift; sourceTree = "<group>"; };
 		06FD572527E48C660029D157 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		06FD572827E48E240029D157 /* ObjectivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesViewController.swift; sourceTree = "<group>"; };
 		06FD572A27E5088B0029D157 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				06F31BF027E86AD00010798B /* CategoryResponseModel.swift */,
 				06F31C0627E98E3B0010798B /* ChallengeModel.swift */,
 				06F31C0D27E99F510010798B /* ConditionModel.swift */,
+				06F31C1827EAD1120010798B /* DeleteModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +287,8 @@
 				06F31BFC27E96DA70010798B /* SubCategoryDetailsViewController.swift */,
 				06F31BF627E874780010798B /* SubCategoryTableViewCell.swift */,
 				06F31BF427E870420010798B /* SubCategoryViewController.swift */,
+				06F31C1427EA4B700010798B /* AllSubCategoryTableViewCell.swift */,
+				06F31C1627EA4B8F0010798B /* AllSubCategoryViewController.swift */,
 			);
 			path = SubCategory;
 			sourceTree = "<group>";
@@ -480,8 +489,10 @@
 				064E178827DBB2BF00490430 /* ApIManager.swift in Sources */,
 				06F31BF727E874780010798B /* SubCategoryTableViewCell.swift in Sources */,
 				06F31C0E27E99F510010798B /* ConditionModel.swift in Sources */,
+				06F31C1727EA4B8F0010798B /* AllSubCategoryViewController.swift in Sources */,
 				06FD572B27E5088B0029D157 /* CategoryTableViewCell.swift in Sources */,
 				068E2B5227DCA28700FDCF09 /* LoginViewController.swift in Sources */,
+				06F31C1527EA4B700010798B /* AllSubCategoryTableViewCell.swift in Sources */,
 				066F34A827DF9A2C0024C952 /* UsersViewController.swift in Sources */,
 				06F31C0327E984FF0010798B /* ChallengesTableViewCell.swift in Sources */,
 				06F31BFD27E96DA70010798B /* SubCategoryDetailsViewController.swift in Sources */,
@@ -499,6 +510,7 @@
 				06177D1827E304D50007FEA3 /* GetAdminProfileDataResponseModel.swift in Sources */,
 				06F31C0727E98E3B0010798B /* ChallengeModel.swift in Sources */,
 				06F31C1127E9C64D0010798B /* IdolsViewController.swift in Sources */,
+				06F31C1927EAD1120010798B /* DeleteModels.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,
 				066F349427DF29A90024C952 /* HomeViewController.swift in Sources */,
 			);

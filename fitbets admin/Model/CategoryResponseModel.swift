@@ -21,6 +21,27 @@ struct GAC: Codable {
     let categoryName, equipment: String
 }
 
+struct AllSubCategoryResponseModel: Codable {
+    let success: Bool
+    let code: Int
+    let status: String
+    let data: [AllSub]
+    let message: String
+}
+
+// MARK: - Datum
+struct AllSub: Codable {
+    let id, categoryID: Int
+    let subcategoryImageFile: String
+    let subcategoryName: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case categoryID = "categoryId"
+        case subcategoryImageFile, subcategoryName
+    }
+}
+
 struct GetSubCategoryResponsModel : Codable {
     let code: Int
     let data: [GASC]
