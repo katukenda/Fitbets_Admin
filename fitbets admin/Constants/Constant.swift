@@ -39,6 +39,7 @@ let deleteSubCategoryById_url = "\(base_url + admin_old_root)/deleteSubCategorie
 let getAllObjectives_url = "\(base_url + objective_root)/getAllObjectives"
 let deleteObjectiveById_url = "\(base_url + objective_root)/delete/"
 let getObjectiveDetails_url = "\(base_url + objective_root)/getObjective/"
+let getObjectiveDetailsByCategory_url = "\(base_url + objective_root)/getObjectivesById/"
 let updateObjectById_url = "\(base_url + objective_root)/update/"
 let createObject_url = "\(base_url + objective_root)/create"
 

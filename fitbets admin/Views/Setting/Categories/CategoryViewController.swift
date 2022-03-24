@@ -22,7 +22,7 @@ class CategoryViewController: UIViewController {
     }
  
     
-    private  func getAllCatagory(){
+    public  func getAllCatagory(){
         spinner.startAnimating()
         APIManager.shareInstance.callgetAllCategory{
             (result) in
