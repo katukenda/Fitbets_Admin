@@ -8,15 +8,17 @@
 import UIKit
 
 class ObjectDetailsViewController: UIViewController {
-
+   
     var categoryId : Int = 0
     var subcategoryId: Int = 0
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var objective_name: UILabel!
+    @IBOutlet weak var objective_time: UITextField!
     @IBOutlet weak var new_object_name: UITextField!
+
     @IBOutlet weak var error_label: UILabel!
     override func viewDidLoad() {
-        super.viewDidLoad()
+         super.viewDidLoad()
         self.getObjectiveDetails()
         // Do any additional setup after loading the view.
     }
@@ -49,6 +51,10 @@ class ObjectDetailsViewController: UIViewController {
             self.error_label.text = "No Object Name input"
             return
         }
+        if objective_time.text?.isEmpty == true {
+            self.error_label.text = "No Object time input"
+            return
+        }
         
         self.error_label.text = " "
         self.updateObject()
@@ -57,10 +63,11 @@ class ObjectDetailsViewController: UIViewController {
     func updateObject(){
         spinner.startAnimating()
         guard let newObject = new_object_name.text else { return }
+        guard let newTime = objective_time.text else { return }
      
         
         
-        let updateObject = ObjectRequestModel(categoryID: self.categoryId, subCategoryID: self.subcategoryId, objectiveName: newObject)
+        let updateObject = ObjectRequestModel(categoryID: self.categoryId, subCategoryID: self.subcategoryId, objectiveName: newObject, objectiveTime: newTime)
         APIManager.shareInstance.callUpdateObjective(updateObjective: updateObject) {
             (result) in
             switch result{

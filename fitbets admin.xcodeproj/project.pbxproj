@@ -31,6 +31,7 @@
 		06AB764D27DA42E30000B967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB764B27DA42E30000B967 /* Main.storyboard */; };
 		06AB764F27DA42E40000B967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06AB764E27DA42E40000B967 /* Assets.xcassets */; };
 		06AB765227DA42E40000B967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AB765027DA42E40000B967 /* LaunchScreen.storyboard */; };
+		06B57E7B27ECC9D80007EEBD /* ObjectiveByIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B57E7A27ECC9D80007EEBD /* ObjectiveByIdTableViewCell.swift */; };
 		06CF318127DE01900088FBCF /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF318027DE018F0088FBCF /* TokenService.swift */; };
 		06DEF23D27E21D67007E4F66 /* AdminDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */; };
 		06F31BF127E86AD00010798B /* CategoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F31BF027E86AD00010798B /* CategoryResponseModel.swift */; };
@@ -85,6 +86,7 @@
 		06AB764E27DA42E40000B967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06AB765127DA42E40000B967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06AB765327DA42E40000B967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06B57E7A27ECC9D80007EEBD /* ObjectiveByIdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveByIdTableViewCell.swift; sourceTree = "<group>"; };
 		06CF318027DE018F0088FBCF /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		06DEF23C27E21D67007E4F66 /* AdminDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDetailsModel.swift; sourceTree = "<group>"; };
 		06F31BF027E86AD00010798B /* CategoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponseModel.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				06F31C1A27EB371C0010798B /* ObjectiveTableViewCell.swift */,
 				06F31C2027EB76060010798B /* ObjectDetailsViewController.swift */,
 				06F31C2227EB8DE80010798B /* CreateObjectiveViewController.swift */,
+				06B57E7A27ECC9D80007EEBD /* ObjectiveByIdTableViewCell.swift */,
 			);
 			path = Objectives;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				06F31C0727E98E3B0010798B /* ChallengeModel.swift in Sources */,
 				06F31C1127E9C64D0010798B /* IdolsViewController.swift in Sources */,
 				06F31C1927EAD1120010798B /* DeleteModels.swift in Sources */,
+				06B57E7B27ECC9D80007EEBD /* ObjectiveByIdTableViewCell.swift in Sources */,
 				06CF318127DE01900088FBCF /* TokenService.swift in Sources */,
 				06F31C1D27EB56490010798B /* ObjectiveModel.swift in Sources */,
 				066F349427DF29A90024C952 /* HomeViewController.swift in Sources */,

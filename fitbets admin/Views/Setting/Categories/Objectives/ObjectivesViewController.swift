@@ -17,6 +17,7 @@ class ObjectivesViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.reloadData()
         self.getAllObjectives()
+        
         // Do any additional setup after loading the view.
     }
     

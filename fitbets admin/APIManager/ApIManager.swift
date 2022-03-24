@@ -622,7 +622,34 @@ class APIManager{
             switch response.result{
             case .success(let data):
                 do{
-                    let json = try JSONDecoder().decode(ObjectUpdateResponseModel.self, from: data!)
+                    let json = try JSONDecoder().decode(ObjectCreateResponseModel.self, from: data!)
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success(json))
+                    }
+                    else {
+                        completionHandler(.failure(.custom(message: "Please check the network connectivity")))
+                    }
+                }
+                catch{
+                    completionHandler(.failure(.custom(message: "Please try again")))
+                }
+            case .failure(let err):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+    }
+    func callGetObjectiveByCategoryId(completionHandler: @escaping Handler){
+        let headers: HTTPHeaders = [
+            "Authorization": TokenService.tokenInstance.getToken()
+        ]
+        let selected_Cat_Id = TokenService.tokenInstance.getCategoryId()
+        let selected_SubCat_Id = TokenService.tokenInstance.getSubCategoryId()
+        AF.request(getObjectiveDetailsByCategory_url + "\(selected_Cat_Id)/\(selected_SubCat_Id)",method: .get, headers: headers).response{ response in
+            debugPrint(response)
+            switch response.result{
+            case .success(let data):
+                do{
+                    let json = try JSONDecoder().decode(GetObjectByCatIDResponseModel.self, from: data!)
                     if response.response?.statusCode == 200 {
                         completionHandler(.success(json))
                     }
